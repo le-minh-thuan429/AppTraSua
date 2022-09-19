@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".TrangChu.ChiTietSanPham">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@drawable/anh6"
+        android:id="@+id/image"
+        android:layout_height="133dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tenSP"
+                android:layout_width="268dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="thuận gnnnnnngggggg"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/chitietsp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_width="40dp"
+
+                android:background="@drawable/ttdonhang1"
+                android:layout_height="40dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/gia"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="left"
+                android:text="vvvvvvvj"
+                android:textColor="@color/Red"
+                android:textSize="17dp" />
+
+            <TableRow
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="+"
+                    android:backgroundTint="@color/Red"
+                    android:id="@+id/cong"/>
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:text="1"
+                    android:backgroundTint="@color/Red"
+                    android:id="@+id/soluong"/>
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="-"
+                    android:backgroundTint="@color/Red"
+                    android:id="@+id/tru"/>
+            </TableRow>
+        </TableRow>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardElevation="10dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:text="Topping"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold|normal" />
+
+                <TextView
+                    android:id="@+id/ViewTopping"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/lonhon"
+                    android:drawablePadding="10dp"
+                    android:gravity="right"
+                    android:padding="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="1dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#0E0E0E"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Topping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_margin="10dp"
+            app:cardElevation="10dp"
+            android:visibility="gone"
+            app:cardCornerRadius="10dp"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:paddingLeft="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn đường"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/ChonDuong"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/khongduong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Không đường " />
+
+                        <RadioButton
+                            android:id="@+id/itduong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="50% đường " />
+
+                        <RadioButton
+                            android:id="@+id/nhieuduong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100% đường " />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn Size"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/Size"
+                        android:paddingLeft="13dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/sizeL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Size L " />
+
+                        <RadioButton
+                            android:id="@+id/sizesL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Size Ls" />
+
+                        <RadioButton
+                            android:id="@+id/sizesM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Size M " />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn đá"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/ChonDa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/Lamam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Làm ấm " />
+
+                        <RadioButton
+                            android:id="@+id/itda"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="50% đá" />
+
+                        <RadioButton
+                            android:id="@+id/nhieuda"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100% đá " />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn vị phụ"
+                        android:layout_marginRight="20dp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/ViPhu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/hatde"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Thêm hạt dẻ" />
+
+                        <RadioButton
+                            android:id="@+id/tranchau"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Thêm trân châu" />
+
+                        <RadioButton
+                            android:id="@+id/xuongmai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Thêm hạt xương mai " />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </FrameLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+
+            android:layout_width="249dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Sản phẩm tương tự"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listSP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:ignore="RtlCompat" />
+
+        <TableRow
+            android:gravity="right"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/giohang"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/switch_trcks"
+                android:drawableTop="@drawable/giohang1"
+                android:elevation="15dp"
+                app:backgroundTint="#CC0909"
+                android:layout_marginRight="5dp"
+                tools:ignore="RtlCompat" />
+
+            <Button
+                android:id="@+id/Muangay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/switch_trcks"
+                android:elevation="15dp"
+                android:text="Mua ngay"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:backgroundTint="#CC0909" />
+        </TableRow>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

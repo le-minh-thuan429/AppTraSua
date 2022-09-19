@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TrangChu.SanPhamTheoLoai">
+
+
+    <FrameLayout
+        android:id="@+id/layout_nen"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_gravity="top"
+        android:background="#F38CA2">
+
+        <ImageView
+            android:layout_width="176dp"
+            android:layout_height="91dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/anh3" />
+
+        <TextView
+            android:id="@+id/tenloai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="jjjjjjjj"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_yellow_corner4" />
+    </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TableRow
+                android:background="@drawable/vien"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:id="@+id/countries"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/gotimkiem"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_baseline_search_24"
+                    android:drawablePadding="20dp"
+                    android:padding="11dp"
+                    />
+                <View
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/black"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"/>
+                <AutoCompleteTextView
+                    android:id="@+id/timkiem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:completionThreshold="1"
+                    android:textSize="16sp"
+                    android:gravity="left"
+                    android:dropDownAnchor="@id/countries"
+                    android:hint="Tìm kiếm" />
+            </TableRow>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listSP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                tools:ignore="RtlCompat" />
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/layout_nen"
+        android:layout_width="match_parent"
+        android:layout_height="139dp">
+
+        <TextView
+            android:id="@+id/nen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cd2"
+            android:ems="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cd1"
+            android:ems="1" />
+        <TextView
+
+            android:layout_width="249dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="30dp"
+            android:text="Choose the"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+           android:layout_marginBottom="30dp"
+            android:textStyle="normal" />
+        <TextView
+
+            android:layout_width="249dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="30dp"
+            android:text="drinks your love"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:id="@+id/abc"
+            android:textStyle="bold" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/anh1"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:civ_border_width="2dp"
+            tools:ignore="MissingClass" />
+    </FrameLayout>
+    <TableRow
+        android:background="@drawable/vien"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:id="@+id/countries"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/gotimkiem"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_baseline_search_24"
+            android:drawablePadding="20dp"
+            android:padding="11dp"
+            />
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="@color/black"
+            android:layout_width="1dp"
+            android:layout_height="30dp"/>
+        <AutoCompleteTextView
+            android:id="@+id/timkiem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:completionThreshold="1"
+            android:textSize="16sp"
+            android:gravity="left"
+            android:dropDownAnchor="@id/countries"
+            android:hint="Tìm kiếm" />
+    </TableRow>
+
+
+    <TextView
+
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:text="Danh mục sản phẩm"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listLSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="15dp"
+        android:text="Sản phẩm bán chạy"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listSP"
+        tools:ignore="RtlCompat"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
