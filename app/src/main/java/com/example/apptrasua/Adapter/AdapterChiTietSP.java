@@ -60,6 +60,7 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
     SQLiteDatabase database;
     String maCTHD;
     String maTP;
+    Tooping tooping;
 
 
     int a;
@@ -107,6 +108,14 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
                 int b=0;
                 for(GioHang e: Comon.gioHangArrayList) {
                     if(e.getMaSP().equals(gioHang.getMaSP())){
+
+                        for (int i=0;i<Comon.toopingArrayList.size();i++){
+                            Tooping tooping1=Comon.toopingArrayList.get(i);
+                            if(tooping1.getMCTHD().trim().equals(gioHang.getMaCTHD().trim())){
+                                Comon.toopingArrayList.set(i,tooping);
+                                break;
+                            }
+                        }
                         Intent intent=new Intent(context, GioHangActivity.class);
                         context.startActivity(intent);
                         break;
@@ -117,6 +126,7 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
                 }
                 if(b==Comon.gioHangArrayList.size()){
                     Comon.gioHangArrayList.add(gioHang);
+                    Comon.toopingArrayList.add(tooping);
                     Intent intent=new Intent(context, GioHangActivity.class);
                     context.startActivity(intent);
                 }
@@ -143,7 +153,8 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
            @Override
            public void onClick(View view) {
                GioHang(gioHang);
-               Tooping(holder,gioHang);
+             //  Tooping(holder,gioHang);
+
            }
        });
 
@@ -191,7 +202,7 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
 
     public void Tooping( CTSPView holder,GioHang gioHang){
         maTP=Comon.id+"MaTP"+Comon.toopingArrayList.size();
-        Tooping tooping =new Tooping("","","","","","");
+        tooping =new Tooping("","","","","","");
         tooping.setMCTHD(gioHang.getMaCTHD());
         tooping.setMaTP(maTP);
         holder.ChonDuong.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -201,7 +212,6 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
                     case R.id.khongduong:
                         tooping.setChonDuong("Không đường");
                      //   Toast.makeText(context, "thuan "+tooping.getChonDuong(), Toast.LENGTH_LONG).show();
-
                         break;
                     case R.id.itduong:
                         tooping.setChonDuong("50% đường");
@@ -272,7 +282,6 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
             }
         });
 
-        Comon.toopingArrayList.add(tooping);
 
     }
 
@@ -286,6 +295,13 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
                 int b=0;
                 for(GioHang e: Comon.gioHangArrayList) {
                     if(e.getMaSP().equals(gioHang.getMaSP())){
+                        for (int y=0;y<Comon.toopingArrayList.size();y++){
+                            Tooping tooping1=Comon.toopingArrayList.get(y);
+                            if(tooping1.getMCTHD().trim().equals(gioHang.getMaCTHD().trim())){
+                                Comon.toopingArrayList.set(y,tooping);
+                                break;
+                            }
+                        }
                         Toast.makeText(context, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
                         break;
                     }else{
@@ -294,6 +310,7 @@ public class AdapterChiTietSP extends RecyclerView.Adapter<AdapterChiTietSP.CTSP
                 }
                 if(b==Comon.gioHangArrayList.size()){
                     Comon.gioHangArrayList.add(gioHang);
+                    Comon.toopingArrayList.add(tooping);
                     Toast.makeText(context, "Thêm thành công", Toast.LENGTH_LONG).show();
 
                 }

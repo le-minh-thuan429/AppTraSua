@@ -18,8 +18,8 @@
         <activity android:name=".TrangChu.ChiTietSanPham" />
         <activity android:name=".TrangChu.SanPhamTheoLoai" />
         <activity android:name=".CaNhan.ThongTinCaNhan" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".DangNhap_DangKy">
+        <activity android:name=".DangNhap_DangKy" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
