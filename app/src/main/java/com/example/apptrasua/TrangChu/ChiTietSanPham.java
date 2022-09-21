@@ -65,6 +65,7 @@ public class ChiTietSanPham extends AppCompatActivity {
         setContentView(R.layout.activity_chi_tiet_san_pham);
 
         AnhXa();
+
         Bundle bundle=getIntent().getExtras();
         sanPham=(SanPham)bundle.get("ObJect");
 
