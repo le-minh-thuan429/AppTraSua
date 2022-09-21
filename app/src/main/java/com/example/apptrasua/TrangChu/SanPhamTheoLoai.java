@@ -32,7 +32,7 @@ public class SanPhamTheoLoai extends AppCompatActivity {
     TextView tenloai,gotimkiem;
     LoaiSP loaiSP;
     SQLiteDatabase database;
-     AutoCompleteTextView timkiem;
+    AutoCompleteTextView timkiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

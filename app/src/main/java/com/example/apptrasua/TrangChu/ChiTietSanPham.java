@@ -82,15 +82,15 @@ public class ChiTietSanPham extends AppCompatActivity {
         }else if(Comon.gioHangArrayList.size()>0) {
             for(GioHang e: Comon.gioHangArrayList) {
                 if(e.getMaSP().equals(sanPham.getMaSP())){
-                   gioHang.setMaCTHD(e.getMaCTHD().trim());
+                    gioHang.setMaCTHD(e.getMaCTHD().trim());
                     break;
                 }else {
-                   y++;
+                    y++;
 
                 }
             }
             if(y==Comon.gioHangArrayList.size()){
-               boolean a=true;
+                boolean a=true;
                 do{
                     MACTHD=Comon.id+"CTHD"+RanDomAnh(0,1000000000);
                     for(GioHang e: Comon.gioHangArrayList) {
@@ -142,7 +142,7 @@ public class ChiTietSanPham extends AppCompatActivity {
                 int b=0;
                 for(GioHang e: Comon.gioHangArrayList) {
                     if(e.getMaSP().equals(gioHang.getMaSP())){
-                      //  Toast.makeText(ChiTietSanPham.this, "thuan ", Toast.LENGTH_LONG).show();
+                        //  Toast.makeText(ChiTietSanPham.this, "thuan ", Toast.LENGTH_LONG).show();
                         for (int i=0;i<Comon.toopingArrayList.size();i++){
                             Tooping tooping1=Comon.toopingArrayList.get(i);
                             if(tooping1.getMCTHD().trim().equals(e.getMaCTHD().trim())){
@@ -354,19 +354,19 @@ public class ChiTietSanPham extends AppCompatActivity {
             tooping.setMaTP(maTP);
         }else if(Comon.toopingArrayList.size()>0) {
 
-                boolean a=true;
-                do{
-                    maTP=Comon.id+"maTP"+RanDomAnh(0,1000000000);
-                    for(Tooping e: Comon.toopingArrayList) {
-                        if(!e.getMaTP().equals(maTP)){
-                            tooping.setMaTP(maTP);
-                            a=false;
-                            break;
-                        }else {
-                            a=true;
-                        }
+            boolean a=true;
+            do{
+                maTP=Comon.id+"maTP"+RanDomAnh(0,1000000000);
+                for(Tooping e: Comon.toopingArrayList) {
+                    if(!e.getMaTP().equals(maTP)){
+                        tooping.setMaTP(maTP);
+                        a=false;
+                        break;
+                    }else {
+                        a=true;
                     }
-                }while (a);
+                }
+            }while (a);
         }
         tooping.setMCTHD(gioHang.getMaCTHD());
         ChonDuong.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -445,6 +445,7 @@ public class ChiTietSanPham extends AppCompatActivity {
                 }
             }
         });
+
 
     }
 }
