@@ -66,7 +66,7 @@ public class Start extends AppCompatActivity {
         }catch (Exception e){
             AlertDialog.Builder al = new AlertDialog.Builder(Start.this);
             al.setTitle("Database Demo");
-            al.setMessage("Mã không tồn tại");
+            al.setMessage("Mã không tồn tại  ");
             al.create().show();
 
         }

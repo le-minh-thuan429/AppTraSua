@@ -24,6 +24,7 @@ public class AdapterLoaiSP extends RecyclerView.Adapter<AdapterLoaiSP.LoaiSPView
 
     ArrayList<LoaiSP> arrayList;
     Context context;
+    // bundle.putSerializable("ObJect", loaiSP);
 
     public AdapterLoaiSP(ArrayList<LoaiSP> arrayList, Context context) {
         this.arrayList = arrayList;
