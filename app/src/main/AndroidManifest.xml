@@ -13,13 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTraSua">
-        <activity android:name=".TrangChu.SanPhamTimKiem"></activity>
+        <activity android:name=".GioHang.XacNhanDonHang"></activity>
+        <activity android:name=".GioHang.ThongTinThanhToan" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TrangChu.SanPhamTimKiem" />
         <activity android:name=".GioHang.GioHangActivity" />
         <activity android:name=".TrangChu.ChiTietSanPham" />
         <activity android:name=".TrangChu.SanPhamTheoLoai" />
         <activity android:name=".CaNhan.ThongTinCaNhan" />
         <activity android:name=".DangNhap_DangKy" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

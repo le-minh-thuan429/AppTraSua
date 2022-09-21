@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GioHang.XacNhanDonHang">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:gravity="center_vertical"
+            android:id="@+id/quaylai"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/trolai"
+            android:layout_height="40dp"/>
+        <TextView
+
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Xác nhân đơn hàng"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_height="40dp"/>
+
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <TableRow
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="30dp"
+                        android:background="@drawable/button"
+                        android:drawableTop="@drawable/ic_baseline_done_24"
+                        android:layout_height="30dp"/>
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+
+                        android:textColor="@color/black"
+                        android:text="Thông tin"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_width="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/black"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="30dp"
+                        android:background="@drawable/button"
+                        android:drawableTop="@drawable/ic_baseline_done_24"
+                        android:layout_height="30dp"/>
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Đơn hàng "
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_width="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/black"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="30dp"
+                        android:background="@drawable/button"
+                        android:layout_height="30dp"/>
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:text="Hoàn thành"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="1dp"
+                    android:paddingBottom="5dp"
+                    android:text="Sản phẩm đặt hàng"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold|normal" />
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="10dp"
+                    android:gravity="right"
+                    android:padding="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="1dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#0E0E0E"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="gone"
+                tools:ignore="RtlCompat" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardElevation="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="5dp"
+                        android:text="Thông tin đơn hàng"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold|normal" />
+
+                    <TextView
+                        android:id="@+id/ViewTTDH"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableRight="@drawable/lonhon"
+                        android:drawablePadding="10dp"
+                        android:gravity="right"
+                        android:padding="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#0E0E0E"
+                        android:textSize="15dp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layout_TTDH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="10dp"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                android:orientation="vertical"
+                android:padding="15dp"
+
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Mã hóa đơn :"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/MaHD"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="10dp"
+                            android:gravity="right"
+                            android:padding="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:text="HD01"
+                            android:textColor="#0E0E0E"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp"
+                            android:text="Tên khách hàng :"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/HoTen"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="10dp"
+                            android:gravity="right"
+                            android:padding="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:text="HD01"
+                            android:textColor="#0E0E0E"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp"
+                            android:text="Phương thức thanh toán :"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/PTTT"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="10dp"
+                            android:gravity="right"
+                            android:padding="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:text="HD01"
+                            android:textColor="#0E0E0E"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Địa chỉ nhận hàng :"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/Diachi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:text="Tòa nhà VNPT, số 57 Huỳnh Thúc Kháng,
+P. Láng Hạ, Q. Đống Đa, TP. Hà Nội"
+                            android:textColor="#0E0E0E"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp"
+                            android:text="Tổng tiền hàng :"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/TienHang"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="10dp"
+                            android:gravity="right"
+                            android:padding="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:text="165.000 Đ"
+                            android:textColor="#0E0E0E"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="5dp"
+                            android:text="Tổng phi vận chuyển :"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold|normal" />
+
+                        <TextView
+                            android:id="@+id/PhiVC"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="10dp"
+                            android:gravity="right"
+                            android:padding="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="1dp"
+                            android:paddingBottom="5dp"
+                            android:text="45.000 Đ"
+                            android:textColor="#0E0E0E"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/white"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="15dp"
+                            android:gravity="center"
+                            android:text="Thành tiền"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Tong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="15dp"
+                            android:gravity="center"
+                            android:text="100000đ"
+                            android:textColor="#F11C0D"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/Tieptheo"
+                        android:layout_width="204dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/switch_trcks"
+                        android:elevation="15dp"
+                        android:text="Tiếp theo"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        app:backgroundTint="#CC0909" />
+                </LinearLayout>
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

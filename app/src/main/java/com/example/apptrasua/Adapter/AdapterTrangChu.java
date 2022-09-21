@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptrasua.Comon;
 import com.example.apptrasua.DatabaseHandler;
 import com.example.apptrasua.Models.LoaiSP;
 import com.example.apptrasua.Models.SanPham;
@@ -25,6 +28,8 @@ import com.example.apptrasua.R;
 import com.example.apptrasua.TrangChu.SanPhamTimKiem;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangChuView>  {
 
@@ -59,15 +64,19 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
         AdapterTimKiemTrangChu countryadapter=new AdapterTimKiemTrangChu(context, R.layout.item_timkiem,getSPTimKiem());
         holder.timkiem.setAdapter(countryadapter);
 
+
         holder.gotimkiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String a= holder.timkiem.getText().toString().toLowerCase().trim();
-                Intent intent1 = new Intent(context, SanPhamTimKiem.class);
-                intent1.putExtra("abc", a);
-                context.startActivity(intent1);
+                if(Comon.DinhDangTimkiem(a)){
+                    Intent intent1 = new Intent(context, SanPhamTimKiem.class);
+                    intent1.putExtra("abc", a);
+                    context.startActivity(intent1);
+                }
             }
         });
+        ViewAnh(holder);
 
     }
 
@@ -158,16 +167,37 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
         return List;
     }
 
+    public void ViewAnh(TrangChuView holder){
+        Cursor cursor;
+        try {
+            oppen();
+            cursor = database.rawQuery("select * from NguoiDung where id = " + Comon.id , null);
+            cursor.moveToFirst();
+            int count = cursor.getCount();
+            if (count == 1) {
+                byte[] hinhanh=cursor.getBlob(6);
+                Bitmap bitmap= BitmapFactory.decodeByteArray(hinhanh,0,hinhanh.length);
+                holder.profile_image.setImageBitmap(bitmap);
+            }
+            close();
+        }catch (Exception e){
+            AlertDialog.Builder al = new AlertDialog.Builder(context);
+            al.setTitle("Database Demo");
+            al.setMessage("Mã không tồn tại");
+            al.create().show();
+        }
 
+    }
 
     public static class TrangChuView extends RecyclerView.ViewHolder {
 
-        private RecyclerView listSP,listLSP;
+        public RecyclerView listSP,listLSP;
 
-        private AutoCompleteTextView timkiem;
+        public AutoCompleteTextView timkiem;
 
         public static FrameLayout layout_nen;
         public TextView gotimkiem;
+        public CircleImageView profile_image;
         public TrangChuView(@NonNull View itemView) {
             super(itemView);
             listLSP=itemView.findViewById(R.id.listLSP);
@@ -175,6 +205,7 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
             timkiem=itemView.findViewById(R.id.timkiem);
             layout_nen =itemView.findViewById(R.id.layout_nen);
             gotimkiem =itemView.findViewById(R.id.gotimkiem);
+            profile_image =itemView.findViewById(R.id.profile_image);
         }
     }
 }

@@ -1,8 +1,10 @@
 package com.example.apptrasua.fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -18,7 +20,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.apptrasua.CaNhan.ThongTinCaNhan;
 import com.example.apptrasua.Comon;
+import com.example.apptrasua.DangNhap_DangKy;
 import com.example.apptrasua.DatabaseHandler;
+import com.example.apptrasua.MainActivity;
 import com.example.apptrasua.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -64,12 +68,13 @@ public class CaNhanFragment extends Fragment {
         return fragment;
     }
     Button TTCN, TTDH;
-    TextView SuaHS,Usename;
+    TextView SuaHS,Usename,DangXuat;
     ImageView image;
     CircleImageView profile_image;
     final String DATABASE_NAME = "AppTraSua.db";
     SQLiteDatabase database;
     View view;
+    private MainActivity mainActivity;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +93,7 @@ public class CaNhanFragment extends Fragment {
 
         view=inflater.inflate(R.layout.fragment_ca_nhan, container, false);
         TTCN=view.findViewById(R.id.TTCN);
+        DangXuat=view.findViewById(R.id.DangXuat);
         SuaHS=view.findViewById(R.id.SuaHS);
         TTDH=view.findViewById(R.id.TTDH);
         Usename=view.findViewById(R.id.Usename);
@@ -110,6 +116,40 @@ public class CaNhanFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+            }
+        });
+        mainActivity=(MainActivity)getActivity();
+
+        DangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder al = new AlertDialog.Builder(getContext());
+                al.setTitle("Đăng xuất");
+                al.setMessage("Bạn muốn đăng xuất");
+                al.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        oppen();
+                        String sql="update TaiKhoan set TrangThai =? where id = ?";
+                        SQLiteStatement sqLiteStatement=database.compileStatement(sql);
+                        sqLiteStatement.clearBindings();
+                        sqLiteStatement.bindString(1,"OFF");
+                        sqLiteStatement.bindDouble(2,Comon.id);
+                        sqLiteStatement.executeUpdateDelete();
+                        sqLiteStatement.execute();
+                        close();
+                        startActivity(new Intent(getContext(), DangNhap_DangKy.class));
+                        mainActivity.finish();
+
+                    }
+                });
+                al.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                al.create().show();
             }
         });
         ViewAnh();

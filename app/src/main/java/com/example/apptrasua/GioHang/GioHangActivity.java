@@ -1,6 +1,9 @@
 package com.example.apptrasua.GioHang;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,8 @@ public class GioHangActivity extends AppCompatActivity {
     AdapterGioHang adapterGioHang;
     RecyclerView listGH;
     public static TextView soluong, Tong;
+    TextView quaylai;
+    Button HoanTat;
 
 
     @Override
@@ -26,6 +31,8 @@ public class GioHangActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gio_hang);
         listGH=findViewById(R.id.listGH);
+        quaylai=findViewById(R.id.quaylai);
+        HoanTat=findViewById(R.id.HoanTat);
         soluong=findViewById(R.id.soluong);
         soluong.setText("("+Comon.gioHangArrayList.size()+")");
         Tong=findViewById(R.id.Tong);
@@ -37,6 +44,20 @@ public class GioHangActivity extends AppCompatActivity {
         listGH.setAdapter(adapterGioHang);
         adapterGioHang.notifyDataSetChanged();
 
+        quaylai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        HoanTat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(GioHangActivity.this, ThongTinThanhToan.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public int Tong(){
@@ -46,7 +67,6 @@ public class GioHangActivity extends AppCompatActivity {
         }
         return tong;
     }
-
 
 
 }

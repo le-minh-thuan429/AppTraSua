@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -114,7 +115,7 @@ public class DangNhap_DangKy extends AppCompatActivity {
         Cursor cursor = database.rawQuery("SELECT * FROM  Taikhoan", null);
         String Email = email.getText().toString().trim();
         String Matkhau = password.getText().toString().trim();
-        Taikhoan taikhoan= new Taikhoan("","",Email,Matkhau);
+        Taikhoan taikhoan= new Taikhoan("","",Email,Matkhau,"");
         if (taikhoan.isValidEmail()&&taikhoan.isValidPassword()) {
             cursor.moveToFirst();
             do {
@@ -140,6 +141,14 @@ public class DangNhap_DangKy extends AppCompatActivity {
                         public void run() {
                             dialog.dismiss();
                             Comon.id=cursor.getInt(0);
+                            oppen();
+                            String sql="update TaiKhoan set TrangThai =? where id = ?";
+                            SQLiteStatement sqLiteStatement=database.compileStatement(sql);
+                            sqLiteStatement.clearBindings();
+                            sqLiteStatement.bindString(1,"ON");
+                            sqLiteStatement.bindDouble(2,cursor.getInt(0));
+                            sqLiteStatement.executeUpdateDelete();
+                            sqLiteStatement.execute();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
                             Toast.makeText(DangNhap_DangKy.this, "Đăng nhập thành công ", Toast.LENGTH_LONG).show();
@@ -198,7 +207,7 @@ public class DangNhap_DangKy extends AppCompatActivity {
         String confimpassword =Confimpassword.getText().toString().trim();
         String EmailDangky =emailDangky.getText().toString().trim();
 
-        Taikhoan taikhoan= new Taikhoan("",usename,EmailDangky,PassworDangky);
+        Taikhoan taikhoan= new Taikhoan("",usename,EmailDangky,PassworDangky,"OFF");
         if(taikhoan.isValidUsename() && taikhoan.isValidEmail() && taikhoan.isValidPassword()) {
             if (taikhoan.getMatKhau().trim().equals(confimpassword)){
                 Cursor cursor;
@@ -210,7 +219,7 @@ public class DangNhap_DangKy extends AppCompatActivity {
                     al.setMessage("Tài khoản đã tồn tại !");
                     al.create().show();
                 } else if (count == 0) {
-                    database.execSQL("insert into Taikhoan(TenTK,Email,MatKhau) values('" + taikhoan.getTenTK() + "','" + taikhoan.getEmail() +  "','" + taikhoan.getMatKhau() + "')");
+                    database.execSQL("insert into Taikhoan(TenTK,Email,MatKhau,TrangThai) values('" + taikhoan.getTenTK() + "','" + taikhoan.getEmail() +  "','" + taikhoan.getMatKhau() + "','" + taikhoan.getTrangThai() + "')");
                     ProgressDialog dialog = new ProgressDialog(DangNhap_DangKy.this);
                     dialog.setTitle("Đang đăng nhập");
                     dialog.setIcon(R.drawable.anh2);

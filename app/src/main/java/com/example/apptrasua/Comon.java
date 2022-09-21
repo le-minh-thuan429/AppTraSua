@@ -17,6 +17,9 @@ public class Comon {
     public static int id= 1;
 
 
+    public static Boolean DinhDangTimkiem(String timkiem){
+        return !TextUtils.isEmpty(timkiem);
+    }
     public static Boolean DinhDangEmail(String email){
         return !TextUtils.isEmpty(email)&& Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }

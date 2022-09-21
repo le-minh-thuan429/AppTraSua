@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -102,6 +103,16 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
             @Override
             public void onClick(View view) {
                 arrayList.remove(position);
+                for (int i=0;i<Comon.toopingArrayList.size();i++){
+                    Tooping tooping=Comon.toopingArrayList.get(i);
+                    if(tooping.getMCTHD().equals(gioHang.getMaCTHD())){
+                        Toast.makeText(context, "thuan "+tooping.getMCTHD(), Toast.LENGTH_LONG).show();
+                        Comon.toopingArrayList.remove(tooping);
+                        break;
+                    }
+                }
+                GioHangActivity.soluong.setText("("+Comon.gioHangArrayList.size()+")");
+                GiohangFragment.soluong.setText("("+Comon.gioHangArrayList.size()+")");
                 notifyDataSetChanged();
                 GioHangActivity.Tong.setText(Comon.formatMoney(Tong())+" VND");
                 GiohangFragment.Tong.setText(Comon.formatMoney(Tong())+" VND");
@@ -163,9 +174,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
         ViewTooping( gioHang);
 
         tooping =new Tooping("","","","","","");
-        tooping.setMaTP(maTP);
         tooping.setMCTHD(gioHang.getMaCTHD().trim());
-
         Ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -173,6 +182,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
                 for (int i=0;i<Comon.toopingArrayList.size();i++){
                     Tooping tooping1=Comon.toopingArrayList.get(i);
                     if(tooping1.getMCTHD().trim().equals(gioHang.getMaCTHD().trim())){
+                        tooping.setMaTP(tooping1.getMaTP());
                         if(khongduong.isChecked()){
                             tooping.setChonDuong("Không đường");
                         }
@@ -197,7 +207,6 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
                         if(sizesM.isChecked()) {
                             tooping.setSize("Size M");
                         }
-
 
 
                         if(Lamam.isChecked()){

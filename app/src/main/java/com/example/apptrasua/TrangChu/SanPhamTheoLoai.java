@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Adapter.AdapterSanPhamTheoLoai;
 import com.example.apptrasua.Adapter.AdapterTimKiemTheoLoai;
+import com.example.apptrasua.Comon;
 import com.example.apptrasua.DatabaseHandler;
 import com.example.apptrasua.Models.LoaiSP;
 import com.example.apptrasua.Models.SanPham;
@@ -55,9 +56,12 @@ public class SanPhamTheoLoai extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String a= timkiem.getText().toString().toLowerCase().trim();
-                Intent intent1 = new Intent(SanPhamTheoLoai.this, SanPhamTimKiem.class);
-                intent1.putExtra("abc", a);
-                startActivity(intent1);
+                if(Comon.DinhDangTimkiem(a)){
+                    Intent intent1 = new Intent(SanPhamTheoLoai.this, SanPhamTimKiem.class);
+                    intent1.putExtra("abc", a);
+                    startActivity(intent1);
+                }
+
             }
         });
     }

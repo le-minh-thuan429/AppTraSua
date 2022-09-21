@@ -28,6 +28,7 @@ public class AdapterSanPhamTuongTu extends RecyclerView.Adapter<AdapterSanPhamTu
     Context context;
 
 
+    ChiTietSanPham chiTietSanPham;
     public AdapterSanPhamTuongTu(ArrayList<SanPham> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
@@ -41,7 +42,6 @@ public class AdapterSanPhamTuongTu extends RecyclerView.Adapter<AdapterSanPhamTu
         return new SanPhamView(convertView);
     }
 
-    public ChiTietSanPham chiTietSanPham;
 
     @Override
     public void onBindViewHolder(@NonNull SanPhamView holder, int position) {
@@ -61,6 +61,7 @@ public class AdapterSanPhamTuongTu extends RecyclerView.Adapter<AdapterSanPhamTu
                 bundle.putSerializable("ObJect", sanPham);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
+
 
             }
         });

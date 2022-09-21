@@ -333,6 +333,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
                 sqLiteStatement.execute();
                 View();
                 Toast.makeText(ThongTinCaNhan.this, "Lưu thành công  ", Toast.LENGTH_LONG).show();
+                finish();
                 close();
 
                 // database.execSQL("update NguoiDung set HoTen='" + HoTen + "',SoDienThoai=" + Sodienthoai + ",Email='" + Email + "',DiaChi='" + Diachi + "',id = " + Comon.id + " ,HinhAnhUse='" + hinhanh + "' ,AnhBia='" + hinhanhbia + "' where MaKH = '" + makh + "'");
