@@ -186,8 +186,6 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
             al.setMessage("Mã không tồn tại");
             al.create().show();
         }
-
-
     }
 
     public static class TrangChuView extends RecyclerView.ViewHolder {
