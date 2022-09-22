@@ -130,7 +130,7 @@
                         </FrameLayout>
 
                         <Button
-                            android:id="@+id/Muangay"
+                            android:id="@+id/HoanTaT"
                             android:layout_width="249dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

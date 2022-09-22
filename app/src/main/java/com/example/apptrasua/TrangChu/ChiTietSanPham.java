@@ -53,6 +53,7 @@ public class ChiTietSanPham extends AppCompatActivity {
     RadioButton khongduong,itduong,nhieuduong;
     SanPham sanPham;
 
+
     final String DATABASE_NAME = "AppTraSua.db";
     SQLiteDatabase database;
     String MACTHD;
@@ -287,11 +288,20 @@ public class ChiTietSanPham extends AppCompatActivity {
                         for (int y=0;y<Comon.toopingArrayList.size();y++){
                             Tooping tooping1=Comon.toopingArrayList.get(y);
                             if(tooping1.getMCTHD().trim().equals(gioHang.getMaCTHD().trim())){
-                                Comon.toopingArrayList.set(y,tooping);
-                                break;
+                                if(tooping.getChonDuong().equals("")&&tooping.getSize().equals("")&&tooping.getChonDa().equals("")&&tooping.getViPhu().equals("")){
+                                    Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
+
+                                    break;
+                                }else {
+                                    Comon.toopingArrayList.set(y,tooping);
+                                    Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
+
+                                    break;
+                                }
+
                             }
                         }
-                        Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
+                      //  Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
                         break;
                     }else{
                         b++;

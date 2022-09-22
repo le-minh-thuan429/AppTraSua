@@ -1,9 +1,11 @@
 package com.example.apptrasua.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Adapter.AdapterGioHang;
 import com.example.apptrasua.Comon;
+import com.example.apptrasua.GioHang.ThongTinThanhToan;
 import com.example.apptrasua.Models.GioHang;
 import com.example.apptrasua.R;
 
@@ -40,6 +43,7 @@ public class GiohangFragment extends Fragment {
     AdapterGioHang adapterGioHang;
     RecyclerView listGH;
     public  static TextView soluong, Tong;
+    Button HoanTaT;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -78,6 +82,7 @@ public class GiohangFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_giohang, container, false);
 
         listGH=view.findViewById(R.id.listGH);
+        HoanTaT=view.findViewById(R.id.HoanTaT);
         soluong=view.findViewById(R.id.soluong);
         soluong.setText("("+Comon.gioHangArrayList.size()+")");
         Tong=view.findViewById(R.id.Tong);
@@ -88,6 +93,14 @@ public class GiohangFragment extends Fragment {
         listGH.setLayoutManager(linearLayoutManager);
         listGH.setAdapter(adapterGioHang);
         adapterGioHang.notifyDataSetChanged();
+
+        HoanTaT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), ThongTinThanhToan.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
     public int Tong(){
