@@ -187,6 +187,7 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
             al.create().show();
         }
 
+
     }
 
     public static class TrangChuView extends RecyclerView.ViewHolder {
