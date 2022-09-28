@@ -47,6 +47,7 @@ public class AdapterSanPhamTuongTu extends RecyclerView.Adapter<AdapterSanPhamTu
     public void onBindViewHolder(@NonNull SanPhamView holder, int position) {
         final SanPham sanPham=this.arrayList.get(position);
 
+        chiTietSanPham=(ChiTietSanPham)context;
 
         holder.tenSP.setText(sanPham.getTenSP());
         holder.gia.setText(Comon.formatMoney(sanPham.getDonGia())+" VND");
@@ -58,10 +59,10 @@ public class AdapterSanPhamTuongTu extends RecyclerView.Adapter<AdapterSanPhamTu
             public void onClick(View view) {
                 Intent intent=new Intent(context, ChiTietSanPham.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("ObJect", sanPham);
+                bundle.putSerializable("SanPham", sanPham);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
-
+                chiTietSanPham.finish();
 
             }
         });

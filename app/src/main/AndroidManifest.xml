@@ -13,14 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTraSua">
-        <activity android:name=".GioHang.HoanThanh"></activity>
+        <activity android:name=".TrangChu.ChiTietSPCuThe"></activity>
+        <activity android:name=".CaNhan.GioiThieu" />
+        <activity android:name=".CaNhan.TrangThaiDonHang" />
+        <activity android:name=".GioHang.HoanThanh" />
         <activity android:name=".GioHang.XacNhanDonHang" />
         <activity android:name=".GioHang.ThongTinThanhToan" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".TrangChu.SanPhamTimKiem" />
         <activity android:name=".GioHang.GioHangActivity" />
         <activity android:name=".TrangChu.ChiTietSanPham" />
-        <activity android:name=".TrangChu.SanPhamTheoLoai" />
+        <activity
+            android:name=".TrangChu.SanPhamTheoLoai"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".CaNhan.ThongTinCaNhan" />
         <activity android:name=".DangNhap_DangKy" />
         <activity android:name=".Start">

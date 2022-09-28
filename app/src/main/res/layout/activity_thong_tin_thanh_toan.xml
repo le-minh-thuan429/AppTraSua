@@ -153,7 +153,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:drawableRight="@drawable/lonhon"
+                        android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                         android:drawablePadding="10dp"
                         android:gravity="right"
                         android:padding="10dp"
@@ -168,7 +168,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -331,7 +331,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:drawableRight="@drawable/lonhon"
+                        android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+
                         android:drawablePadding="10dp"
                         android:gravity="right"
                         android:padding="10dp"
@@ -351,7 +352,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:cardElevation="10dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:cardCornerRadius="10dp"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -383,6 +384,7 @@
                                 android:textSize="10dp"
                                 android:layout_height="wrap_content"/>
 
+
                             <EditText
                                 android:id="@+id/Sodienthoai"
                                 android:layout_width="match_parent"
@@ -393,6 +395,17 @@
                                 android:background="@drawable/vien"
                                 android:textSize="15dp"
                                 android:ems="10" />
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/LoiSodienthoai"
+                                android:layout_gravity="left"
+                                android:layout_width="wrap_content"
+                                android:textColor="@color/Red"
+                                android:text="Số điện thoại không chính xác, mời bạn nhập đúng định dạng\n Số điện thoại gồm 10 số"
+                                android:textStyle="bold"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"/>
+
                             <TextView
                                 android:layout_gravity="left"
                                 android:layout_width="wrap_content"
@@ -411,6 +424,16 @@
                                 android:textSize="15dp"
                                 android:layout_height="40dp"/>
                             <TextView
+                                android:visibility="gone"
+                                android:id="@+id/LoiEmail"
+                                android:layout_gravity="left"
+                                android:layout_width="wrap_content"
+                                android:textColor="@color/Red"
+                                android:text="Mời bạn nhập đúng định dạng Email"
+                                android:textStyle="bold"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"/>
+                            <TextView
                                 android:layout_gravity="left"
                                 android:layout_width="wrap_content"
                                 android:textColor="@color/black"
@@ -427,6 +450,16 @@
                                 android:layout_width="match_parent"
                                 android:textSize="15dp"
                                 android:layout_height="40dp"/>
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/LoiHoTen"
+                                android:layout_gravity="left"
+                                android:layout_width="wrap_content"
+                                android:textColor="@color/Red"
+                                android:text="Mời bạn nhập đúng định dạng, họ tên gồm 10 ký tự trở lên"
+                                android:textStyle="bold"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"/>
 
                         </LinearLayout>
 
@@ -470,7 +503,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:drawableRight="@drawable/lonhon"
+                        android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                         android:drawablePadding="10dp"
                         android:gravity="right"
                         android:padding="10dp"
@@ -490,7 +523,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:cardElevation="10dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:cardCornerRadius="10dp"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -525,6 +558,7 @@
                                 android:id="@+id/Spinnerdiachi"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
                                 />
                             <TextView
                                 android:layout_gravity="left"
@@ -538,13 +572,23 @@
                             <EditText
                                 android:id="@+id/diachi"
                                 android:paddingLeft="10dp"
-                                android:inputType="textEmailAddress"
+                                android:inputType="textPersonName"
                                 android:background="@drawable/vien"
                                 android:layout_width="match_parent"
                                 android:textSize="15dp"
                                 android:hint="Tỉnh / thành phố, Quận/huyện, Phường/xã"
                                 android:layout_height="40dp"/>
 
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/LoiDiaChi"
+                                android:layout_gravity="left"
+                                android:layout_width="wrap_content"
+                                android:textColor="@color/Red"
+                                android:text="Mời bạn nhập đúng định dạng, địa chỉ không được rỗng\nGồm 10 ký tự trở lên"
+                                android:textStyle="bold"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"/>
                             <EditText
                                 android:id="@+id/diachicuthe"
                                 android:paddingLeft="10dp"
@@ -553,11 +597,23 @@
                                 android:layout_width="match_parent"
                                 android:textSize="15dp"
                                 android:hint="Tên đường,Tòa nhà, Số nhà"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="10dp"
                                 android:layout_height="40dp"/>
+
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/LoiDiaChiCuThe"
+                                android:layout_gravity="left"
+                                android:layout_width="wrap_content"
+                                android:textColor="@color/Red"
+                                android:text="Mời bạn nhập đúng định dạng, địa chỉ không được rỗng\nGồm 10 ký tự trở lên"
+                                android:textStyle="bold"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"/>
 
 
                             <CheckBox
+                                android:id="@+id/Luudiachi"
                                 android:textStyle="bold"
                                 android:textColor="@color/black"
                                 android:layout_gravity="left"

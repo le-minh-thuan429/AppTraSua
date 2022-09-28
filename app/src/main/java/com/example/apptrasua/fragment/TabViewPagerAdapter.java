@@ -1,4 +1,4 @@
-package com.example.apptrasua.Order;
+package com.example.apptrasua.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,13 +19,13 @@ public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
         switch (position){
 
             case 0:
-                return new Tap1Fragment();
+                return new XacNhanFragment();
             case 1:
-                return new Tap2Fragment();
+                return new DaGiaoFragment();
             case 2:
-                return new Tap3Fragment();
+                return new DaHuyFragment();
             default:
-                return new Tap1Fragment();
+                return new XacNhanFragment();
         }
 
     }
@@ -42,15 +42,13 @@ public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
         switch (position){
 
             case 0:
-                return  "Tab1";
+                return  "Xác nhận";
             case 1:
-                return  "Tab2";
+                return  "Đã giao";
             case 2:
-                return "Tab3";
+                return   "Đã hủy";
             default:
-                return  "Tab1";
+                return  "Xác nhận";
         }
     }
-    
-
 }

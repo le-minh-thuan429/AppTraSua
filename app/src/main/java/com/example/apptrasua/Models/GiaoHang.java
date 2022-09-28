@@ -1,6 +1,8 @@
 package com.example.apptrasua.Models;
 
-public class GiaoHang {
+import java.io.Serializable;
+
+public class GiaoHang implements Serializable {
 
     private String MaKH;
     private String HoTen;

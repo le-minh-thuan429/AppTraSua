@@ -51,7 +51,7 @@ public class AdapterLoaiSP extends RecyclerView.Adapter<AdapterLoaiSP.LoaiSPView
             public void onClick(View view) {
                 Intent intent=new Intent(context, SanPhamTheoLoai.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("ObJect", loaiSP);
+                bundle.putSerializable("LoaiSP", loaiSP);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

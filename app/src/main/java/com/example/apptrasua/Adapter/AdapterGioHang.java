@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -106,16 +105,16 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
                 for (int i=0;i<Comon.toopingArrayList.size();i++){
                     Tooping tooping=Comon.toopingArrayList.get(i);
                     if(tooping.getMCTHD().equals(gioHang.getMaCTHD())){
-                        Toast.makeText(context, "thuan "+tooping.getMCTHD(), Toast.LENGTH_LONG).show();
+                       // Toast.makeText(context, "thuan "+tooping.getMCTHD(), Toast.LENGTH_LONG).show();
                         Comon.toopingArrayList.remove(tooping);
                         break;
                     }
                 }
                 GioHangActivity.soluong.setText("("+Comon.gioHangArrayList.size()+")");
-                GiohangFragment.soluong.setText("("+Comon.gioHangArrayList.size()+")");
+
                 notifyDataSetChanged();
                 GioHangActivity.Tong.setText(Comon.formatMoney(Tong())+" VND");
-                GiohangFragment.Tong.setText(Comon.formatMoney(Tong())+" VND");
+
 
             }
         });

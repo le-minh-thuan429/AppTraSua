@@ -54,7 +54,7 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.SanPhamV
             public void onClick(View view) {
                 Intent intent=new Intent(context, ChiTietSanPham.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("ObJect", sanPham);
+                bundle.putSerializable("SanPham", sanPham);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

@@ -81,9 +81,9 @@
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="+"
+                            android:text="-"
                             android:backgroundTint="@color/Red"
-                            android:id="@+id/cong"/>
+                            android:id="@+id/tru"/>
                         <Button
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
@@ -96,9 +96,9 @@
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="-"
+                            android:text="+"
                             android:backgroundTint="@color/Red"
-                            android:id="@+id/tru"/>
+                            android:id="@+id/cong"/>
                     </TableRow>
                 </TableRow>
 
@@ -136,7 +136,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:drawableRight="@drawable/lonhon"
+                            android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                             android:drawablePadding="10dp"
                             android:gravity="right"
                             android:padding="10dp"

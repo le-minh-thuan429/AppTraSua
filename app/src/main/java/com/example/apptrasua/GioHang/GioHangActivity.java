@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -53,8 +54,13 @@ public class GioHangActivity extends AppCompatActivity {
         HoanTat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(GioHangActivity.this, ThongTinThanhToan.class);
-                startActivity(intent);
+                if(Comon.gioHangArrayList.size()==0){
+                    Toast.makeText(GioHangActivity.this, "Không có sản phẩm nào trong giỏ hàng", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent intent=new Intent(GioHangActivity.this, ThongTinThanhToan.class);
+                    startActivity(intent);
+                }
             }
         });
 

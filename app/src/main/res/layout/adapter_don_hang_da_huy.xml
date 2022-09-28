@@ -127,15 +127,6 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/HuyDonHang"
-            style="@style/Button5"
-            android:layout_width="184dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:backgroundTint="#FFEB3B"
-            android:text="Hủy đơn hàng"
-            android:textAllCaps="false" />
     </LinearLayout>
 
 

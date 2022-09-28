@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
     android:layout_height="wrap_content"
-    android:id="@+id/layout_sanpham"
+    android:id="@+id/layout_donhang"
     app:cardCornerRadius="10dp"
     android:padding="10dp"
     app:cardElevation="10dp"
@@ -23,16 +25,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|left"
+            android:gravity="center|top"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/anh2"
-                android:scaleType="centerCrop" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/ChiTietDonHang"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/donhang3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:text="Chi tiết"
+                    android:textSize="13dp"
+                    android:textStyle="normal" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="196dp"
@@ -41,35 +56,47 @@
                 android:gravity="left"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tenSP"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:gravity="center|left"
-                    android:text="jjjjjjjj"
-                    android:textColor="@color/black"
-                    android:textSize="13dp"
-                    android:textStyle="bold" />
                 <TableRow
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
                     <TextView
 
-                        android:layout_width="30dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="center|left"
                         android:textColor="@color/black"
-                        android:text="Giá :"
+                        android:text="Mã hóa đơn :"
                         android:textSize="13dp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/gia"
+                        android:id="@+id/MaHD"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_gravity="center|left"
-                        android:gravity="center|left"
+                        android:gravity="center|right"
                         android:text="mmmmm"
-                        android:textColor="#F44336" />
+                        android:textColor="@android:color/darker_gray" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center|left"
+                        android:textColor="@color/black"
+                        android:text="Họ tên :"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/HoTen"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center|left"
+                        android:gravity="center|right"
+                        android:text="mmmmm"
+                        android:textColor="@android:color/darker_gray" />
                 </TableRow>
 
 
@@ -81,47 +108,34 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="center|left"
-                        android:text="Số lượng : "
+                        android:text="Thành tiền : "
                         android:textColor="@color/black"
                         android:textSize="13dp"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/soluong"
+                        android:id="@+id/Tong"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_gravity="center|left"
-                        android:gravity="center|left"
+                        android:gravity="center|right"
                         android:text="mmmmm"
-                        android:textColor="#F44336" />
+                        android:textSize="20dp"
+                        android:textColor="#FF0202" />
                 </TableRow>
 
             </LinearLayout>
 
         </LinearLayout>
-        <TableRow
-            android:layout_marginTop="3dp"
-            android:gravity="right"
+
+        <Button
+            android:id="@+id/HuyDonHang"
+            style="@style/Button5"
+            android:layout_width="184dp"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="center|left"
-                android:text="Tổng : "
-                android:textColor="@color/black"
-                android:textSize="13dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/Tong"
-                android:layout_width="84dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:gravity="center|left"
-                android:text="mmmmm"
-                android:textColor="#F44336" />
-        </TableRow>
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#FFEB3B"
+            android:text="Hủy đơn hàng"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 

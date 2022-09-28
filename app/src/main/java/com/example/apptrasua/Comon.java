@@ -14,7 +14,7 @@ public class Comon {
 
     public static ArrayList<GioHang> gioHangArrayList=new ArrayList<>();
     public static ArrayList<Tooping> toopingArrayList=new ArrayList<>();
-    public static int id= 1;
+    public static int id;
 
 
     public static Boolean DinhDangTimkiem(String timkiem){
@@ -30,7 +30,7 @@ public class Comon {
         return !TextUtils.isEmpty(Usename) && Usename.length() >= 6;
     }
     public static Boolean DinhDangSDT(String sdt ){
-        return Patterns.PHONE.matcher(sdt).matches();
+        return !TextUtils.isEmpty(sdt)&& Patterns.PHONE.matcher(sdt).matches();
     }
     public static Boolean DinhDangDiaChi(String diachi ){
         return !TextUtils.isEmpty(diachi) && diachi.length() >= 10;

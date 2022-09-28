@@ -19,12 +19,18 @@
         android:gravity="center|left"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/anh2"
-            android:scaleType="centerCrop" />
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/anh2"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
 
 
         <LinearLayout

@@ -2,8 +2,10 @@ package com.example.apptrasua.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageView;
@@ -31,6 +33,18 @@ public class AdapterTimKiemTheoLoai extends ArrayAdapter<SanPham> {
         if(convertView==null){
             convertView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_timkiem,parent,false);
         }
+        convertView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    InputMethodManager imm = (InputMethodManager) getContext()
+                            .getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(
+                            view.getApplicationWindowToken(), 0);
+                }
+                return false;
+            }
+        });
 
          SanPhamTheoLoai.layout_nen.setVisibility(View.GONE);
 
@@ -68,6 +82,7 @@ public class AdapterTimKiemTheoLoai extends ArrayAdapter<SanPham> {
                             }
                         }
                 }
+
                 FilterResults filterResults= new FilterResults();
                 filterResults.values=list;
                 filterResults.count=list.size();

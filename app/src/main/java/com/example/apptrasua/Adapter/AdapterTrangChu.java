@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Comon;
 import com.example.apptrasua.DatabaseHandler;
+import com.example.apptrasua.MainActivity;
 import com.example.apptrasua.Models.LoaiSP;
 import com.example.apptrasua.Models.SanPham;
 import com.example.apptrasua.R;
@@ -36,6 +38,7 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
     final String DATABASE_NAME = "AppTraSua.db";
     SQLiteDatabase database;
     Context context;
+    MainActivity mainActivity;
     public AdapterTrangChu(Context context) {
         this.context=context;
     }
@@ -45,8 +48,13 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
     public TrangChuView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_trang_chu, parent, false);
 
+        if (convertView != null) {
+            InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(convertView.getWindowToken(), 0);
+        }
         return new TrangChuView(convertView);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull AdapterTrangChu.TrangChuView holder, int position) {
@@ -60,6 +68,9 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
         holder.listSP.setLayoutManager(gridLayoutManager);
         AdapterSanPham useAdapter=new AdapterSanPham(getListSP(),context);
         holder.listSP.setAdapter(useAdapter);
+        mainActivity=(MainActivity) context;
+
+
 
         AdapterTimKiemTrangChu countryadapter=new AdapterTimKiemTrangChu(context, R.layout.item_timkiem,getSPTimKiem());
         holder.timkiem.setAdapter(countryadapter);
@@ -191,9 +202,7 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
     public static class TrangChuView extends RecyclerView.ViewHolder {
 
         public RecyclerView listSP,listLSP;
-
         public AutoCompleteTextView timkiem;
-
         public static FrameLayout layout_nen;
         public TextView gotimkiem;
         public CircleImageView profile_image;

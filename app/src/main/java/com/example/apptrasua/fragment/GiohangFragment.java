@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apptrasua.Adapter.AdapterGioHang;
+import com.example.apptrasua.Adapter.AdapterGioHangFragment;
 import com.example.apptrasua.Comon;
 import com.example.apptrasua.GioHang.ThongTinThanhToan;
 import com.example.apptrasua.Models.GioHang;
@@ -40,7 +41,7 @@ public class GiohangFragment extends Fragment {
         // Required empty public constructor
     }
 
-    AdapterGioHang adapterGioHang;
+    AdapterGioHangFragment adapterGioHang;
     RecyclerView listGH;
     public  static TextView soluong, Tong;
     Button HoanTaT;
@@ -88,7 +89,7 @@ public class GiohangFragment extends Fragment {
         Tong=view.findViewById(R.id.Tong);
         Tong.setText(Comon.formatMoney(Tong())+" VND");
 
-        adapterGioHang=new AdapterGioHang(Comon.gioHangArrayList, getContext());
+        adapterGioHang=new AdapterGioHangFragment(Comon.gioHangArrayList, getContext());
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false);
         listGH.setLayoutManager(linearLayoutManager);
         listGH.setAdapter(adapterGioHang);
@@ -97,8 +98,13 @@ public class GiohangFragment extends Fragment {
         HoanTaT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getContext(), ThongTinThanhToan.class);
-                startActivity(intent);
+                if(Comon.gioHangArrayList.size()==0){
+                    Toast.makeText(getContext(), "Không có sản phẩm nào trong giỏ hàng", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent intent=new Intent(getContext(), ThongTinThanhToan.class);
+                    startActivity(intent);
+                }
             }
         });
         return view;

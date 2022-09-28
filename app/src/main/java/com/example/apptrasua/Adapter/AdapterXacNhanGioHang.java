@@ -1,8 +1,6 @@
 package com.example.apptrasua.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,54 +8,44 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.apptrasua.Models.LoaiSP;
+import com.example.apptrasua.Comon;
+import com.example.apptrasua.Models.GioHang;
 import com.example.apptrasua.R;
-import com.example.apptrasua.TrangChu.SanPhamTheoLoai;
 
 import java.util.ArrayList;
 
-public class AdapterLoaiSP extends RecyclerView.Adapter<AdapterLoaiSP.LoaiSPView> {
+public class AdapterXacNhanGioHang extends RecyclerView.Adapter<AdapterXacNhanGioHang.XacNhanGioHangView> {
 
-    ArrayList<LoaiSP> arrayList;
+    ArrayList<GioHang> arrayList;
     Context context;
     // bundle.putSerializable("ObJect", loaiSP);
 
-    public AdapterLoaiSP(ArrayList<LoaiSP> arrayList, Context context) {
+    public AdapterXacNhanGioHang(ArrayList<GioHang> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
     
     @NonNull
     @Override
-    public LoaiSPView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_loaisp, parent, false);
+    public XacNhanGioHangView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_xac_nhan_gio_hang, parent, false);
 
-        return new LoaiSPView(convertView);
+        return new XacNhanGioHangView(convertView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LoaiSPView holder, int position) {
+    public void onBindViewHolder(@NonNull XacNhanGioHangView holder, int position) {
 
-        final LoaiSP loaiSP=this.arrayList.get(position);
-        holder.tenloai.setText(loaiSP.getTenLoai());
-        Glide.with(context).load(loaiSP.getLinkAnh()).into(holder.imageView);
-
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(context, SanPhamTheoLoai.class);
-                Bundle bundle=new Bundle();
-                bundle.putSerializable("ObJect", loaiSP);
-                intent.putExtras(bundle);
-                context.startActivity(intent);
-            }
-        });
+        final GioHang gioHang=this.arrayList.get(position);
+        holder.tenSP.setText(gioHang.getTenSP());
+        Glide.with(context).load(gioHang.getLinkAnh()).into(holder.img);
+        holder.gia.setText(Comon.formatMoney(gioHang.getDonGia())+" VND");
+        holder.soluong.setText(gioHang.getSoLuongMua()+"");
+        holder.Tong.setText(Comon.formatMoney(gioHang.getTong())+" VND");
     }
-
 
     @Override
     public int getItemCount() {
@@ -67,17 +55,18 @@ public class AdapterLoaiSP extends RecyclerView.Adapter<AdapterLoaiSP.LoaiSPView
         return 1;
     }
 
-    public class LoaiSPView extends RecyclerView.ViewHolder {
+    public class XacNhanGioHangView extends RecyclerView.ViewHolder {
 
-        TextView tenloai;
-        CardView cardView;
-        ImageView imageView;
+        TextView tenSP, gia,soluong,Tong;
+        ImageView img;
 
-        public LoaiSPView(@NonNull View itemView) {
+        public XacNhanGioHangView(@NonNull View itemView) {
             super(itemView);
-            cardView=itemView.findViewById(R.id.layout_loaisp);
-            imageView = itemView.findViewById(R.id.img);
-            tenloai = itemView.findViewById(R.id.tenloai);
+            gia=itemView.findViewById(R.id.gia);
+            soluong=itemView.findViewById(R.id.soluong);
+            img = itemView.findViewById(R.id.img);
+            tenSP = itemView.findViewById(R.id.tenSP);
+            Tong = itemView.findViewById(R.id.Tong);
         }
 
     }

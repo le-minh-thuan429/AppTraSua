@@ -22,12 +22,12 @@ import com.example.apptrasua.R;
 
 import java.util.ArrayList;
 
-public class AdapterDonHangDaHuy extends RecyclerView.Adapter<AdapterDonHangDaHuy.HuyDonHangView> {
+public class AdapterDonHangDaGiao extends RecyclerView.Adapter<AdapterDonHangDaGiao.HuyDonHangView> {
 
     ArrayList<DonHang> arrayList;
     Context context;
 
-    public AdapterDonHangDaHuy(ArrayList<DonHang> arrayList, Context context) {
+    public AdapterDonHangDaGiao(ArrayList<DonHang> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }

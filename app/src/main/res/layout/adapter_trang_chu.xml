@@ -88,7 +88,10 @@
             android:completionThreshold="1"
             android:textSize="16sp"
             android:gravity="left"
+            android:ems="10"
             android:dropDownAnchor="@id/countries"
+            android:dropDownHeight="wrap_content"
+            android:imeOptions="actionDone"
             android:hint="Tìm kiếm" />
     </TableRow>
 
@@ -110,6 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+
         tools:ignore="RtlCompat" />
 
     <TextView
@@ -127,6 +131,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listSP"
         tools:ignore="RtlCompat"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

@@ -1,8 +1,10 @@
 package com.example.apptrasua.TrangChu;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.apptrasua.R;
 
 public class ChiTietSPCuThe extends AppCompatActivity {
 

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,27 +22,26 @@ import com.example.apptrasua.R;
 
 import java.util.ArrayList;
 
-public class AdapterDonHang extends RecyclerView.Adapter<AdapterDonHang.DonHangView> {
+public class AdapterDonHangDaHuy extends RecyclerView.Adapter<AdapterDonHangDaHuy.HuyDonHangView> {
 
     ArrayList<DonHang> arrayList;
     Context context;
-    // bundle.putSerializable("ObJect", loaiSP);
 
-    public AdapterDonHang(ArrayList<DonHang> arrayList, Context context) {
+    public AdapterDonHangDaHuy(ArrayList<DonHang> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
     
     @NonNull
     @Override
-    public DonHangView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_don_hang, parent, false);
+    public HuyDonHangView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_don_hang_da_huy, parent, false);
 
-        return new DonHangView(convertView);
+        return new HuyDonHangView(convertView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DonHangView holder, int position) {
+    public void onBindViewHolder(@NonNull HuyDonHangView holder, int position) {
 
         final DonHang donHang=this.arrayList.get(position);
         holder.MaHD.setText(donHang.getMaDH());
@@ -56,13 +54,9 @@ public class AdapterDonHang extends RecyclerView.Adapter<AdapterDonHang.DonHangV
                 ChiTietDonHang(Gravity.CENTER,donHang);
             }
         });
-        holder.HuyDonHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
     }
+
     public void ChiTietDonHang(int gravity,DonHang donHang){
         final Dialog dialog=new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -114,19 +108,18 @@ public class AdapterDonHang extends RecyclerView.Adapter<AdapterDonHang.DonHangV
         return 1;
     }
 
-    public class DonHangView extends RecyclerView.ViewHolder {
+    public class HuyDonHangView extends RecyclerView.ViewHolder {
 
         TextView  MaHD, HoTen, Tong, ChiTietDonHang;
-        Button HuyDonHang;
+
         CardView layout_donhang;
 
-        public DonHangView(@NonNull View itemView) {
+        public HuyDonHangView(@NonNull View itemView) {
             super(itemView);
             MaHD=itemView.findViewById(R.id.MaHD);
             HoTen = itemView.findViewById(R.id.HoTen);
             Tong = itemView.findViewById(R.id.Tong);
             ChiTietDonHang = itemView.findViewById(R.id.ChiTietDonHang);
-            HuyDonHang = itemView.findViewById(R.id.HuyDonHang);
             layout_donhang = itemView.findViewById(R.id.layout_donhang);
         }
 

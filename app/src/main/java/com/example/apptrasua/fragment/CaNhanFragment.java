@@ -18,7 +18,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.apptrasua.CaNhan.GioiThieu;
 import com.example.apptrasua.CaNhan.ThongTinCaNhan;
+import com.example.apptrasua.CaNhan.TrangThaiDonHang;
 import com.example.apptrasua.Comon;
 import com.example.apptrasua.DangNhap_DangKy;
 import com.example.apptrasua.DatabaseHandler;
@@ -45,11 +47,9 @@ public class CaNhanFragment extends Fragment {
     private String mParam2;
 
 
-
     public CaNhanFragment() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -67,7 +67,7 @@ public class CaNhanFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    Button TTCN, TTDH;
+    Button TTCN, TTDH, giothieu;
     TextView SuaHS,Usename,DangXuat;
     ImageView image;
     CircleImageView profile_image;
@@ -92,6 +92,7 @@ public class CaNhanFragment extends Fragment {
 
 
         view=inflater.inflate(R.layout.fragment_ca_nhan, container, false);
+        giothieu=view.findViewById(R.id.giothieu);
         TTCN=view.findViewById(R.id.TTCN);
         DangXuat=view.findViewById(R.id.DangXuat);
         SuaHS=view.findViewById(R.id.SuaHS);
@@ -100,6 +101,12 @@ public class CaNhanFragment extends Fragment {
         Usename.setText( ViewUsename());
         image=view.findViewById(R.id.image);
         profile_image=view.findViewById(R.id.profile_image);
+        giothieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), GioiThieu.class));
+            }
+        });
         TTCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,7 +122,7 @@ public class CaNhanFragment extends Fragment {
         TTDH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getContext(), TrangThaiDonHang.class));
             }
         });
         mainActivity=(MainActivity)getActivity();

@@ -53,12 +53,11 @@ public class AdapterSanPhamTheoLoai extends RecyclerView.Adapter<AdapterSanPhamT
             public void onClick(View view) {
                 Intent intent=new Intent(context, ChiTietSanPham.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("ObJect", sanPham);
+                bundle.putSerializable("SanPham", sanPham);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });
-
 
     }
     @Override

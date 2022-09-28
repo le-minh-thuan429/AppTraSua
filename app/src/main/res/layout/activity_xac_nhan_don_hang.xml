@@ -29,6 +29,13 @@
             android:layout_height="40dp"/>
 
     </FrameLayout>
+    <TextView
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="350dp"
+        android:background="@color/black"
+        android:layout_height="1dp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -192,7 +199,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:drawableRight="@drawable/lonhon"
+                        android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                         android:drawablePadding="10dp"
                         android:gravity="right"
                         android:padding="10dp"
@@ -357,11 +364,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:gravity="left"
-                            android:padding="10dp"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
                             android:paddingRight="5dp"
-                            android:paddingBottom="5dp"
                             android:text="Địa chỉ nhận hàng :"
                             android:textColor="@color/black"
                             android:textSize="15dp"
@@ -373,9 +378,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="left"
-                            android:padding="10dp"
-                            android:paddingLeft="15dp"
                             android:paddingTop="5dp"
+                            android:paddingLeft="10dp"
                             android:paddingRight="1dp"
                             android:paddingBottom="5dp"
                             android:text="Tòa nhà VNPT, số 57 Huỳnh Thúc Kháng,
@@ -420,51 +424,12 @@ P. Láng Hạ, Q. Đống Đa, TP. Hà Nội"
                             android:paddingRight="1dp"
                             android:paddingBottom="5dp"
                             android:text="165.000 Đ"
-                            android:textColor="#0E0E0E"
+                            android:textColor="#F11C0D"
                             android:textSize="15dp"
                             android:textStyle="normal" />
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="left"
-                            android:padding="10dp"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="5dp"
-                            android:paddingRight="0dp"
-                            android:paddingBottom="5dp"
-                            android:text="Tổng phi vận chuyển :"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:textStyle="bold|normal" />
-
-                        <TextView
-                            android:id="@+id/PhiVC"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:drawablePadding="10dp"
-                            android:gravity="right"
-                            android:padding="10dp"
-                            android:paddingLeft="15dp"
-                            android:paddingTop="5dp"
-                            android:paddingRight="1dp"
-                            android:paddingBottom="5dp"
-                            android:text="45.000 Đ"
-                            android:textColor="#0E0E0E"
-                            android:textSize="15dp"
-                            android:textStyle="normal" />
-
-                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

@@ -1,20 +1,30 @@
 package com.example.apptrasua.fragment;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptrasua.Adapter.AdapterDonHangDaGiao;
+import com.example.apptrasua.DatabaseHandler;
+import com.example.apptrasua.Models.DonHang;
 import com.example.apptrasua.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Tap2Fragment#newInstance} factory method to
+ * Use the {@link DaGiaoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tap2Fragment extends Fragment {
+public class DaGiaoFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +35,11 @@ public class Tap2Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Tap2Fragment() {
+
+    RecyclerView listDH;
+    final String DATABASE_NAME = "AppTraSua.db";
+    SQLiteDatabase database;
+    public DaGiaoFragment() {
         // Required empty public constructor
     }
 
@@ -38,8 +52,8 @@ public class Tap2Fragment extends Fragment {
      * @return A new instance of fragment Tap1Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tap2Fragment newInstance(String param1, String param2) {
-        Tap2Fragment fragment = new Tap2Fragment();
+    public static DaGiaoFragment newInstance(String param1, String param2) {
+        DaGiaoFragment fragment = new DaGiaoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -55,11 +69,53 @@ public class Tap2Fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    AdapterDonHangDaGiao adapterDonHangDaGiao;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tap2, container, false);
+        View view=inflater.inflate(R.layout.fragment_tap2, container, false);
+        listDH=view.findViewById(R.id.listDH);
+
+        String trangthai="Đã Giao";
+        adapterDonHangDaGiao=new AdapterDonHangDaGiao(getListDonHang(trangthai), getContext());
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false);
+        listDH.setLayoutManager(linearLayoutManager);
+        listDH.setAdapter(adapterDonHangDaGiao);
+        adapterDonHangDaGiao.notifyDataSetChanged();
+        return view;
+    }
+    public void oppen(){
+        database = DatabaseHandler.initDatabase(getActivity(), DATABASE_NAME);
+    }
+    public void close(){
+        database.close();
+    }
+    private ArrayList<DonHang> getListDonHang(String trangthai){
+
+        ArrayList<DonHang> List=new ArrayList<>();
+        Cursor cursor;
+        try {
+            oppen();
+            cursor = database.rawQuery("select * from  DonHang where TrangThai='"+ trangthai +"'", null);
+            int count=cursor.getCount();
+            cursor.moveToFirst();
+            if (count==0) {
+                //   List.add(new DonHang("","","","",0,0,"","", Comon.id));
+                return List;
+            }else {
+                do{
+                    DonHang donHang=new DonHang(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getInt(5),cursor.getInt(6),cursor.getString(7),cursor.getString(8),cursor.getInt(9));
+                    List.add(donHang);
+                }while (cursor.moveToNext());
+            }
+            close();
+        }catch (Exception e){
+            AlertDialog.Builder al = new AlertDialog.Builder(getContext());
+            al.setTitle("Database Demo");
+            al.setMessage("Dữ liệu lỗi");
+            al.create().show();
+        }
+        return List;
     }
 }

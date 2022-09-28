@@ -68,7 +68,7 @@ public class ChiTietSanPham extends AppCompatActivity {
         AnhXa();
 
         Bundle bundle=getIntent().getExtras();
-        sanPham=(SanPham)bundle.get("ObJect");
+        sanPham=(SanPham)bundle.get("SanPham");
 
         tenSP.setText(sanPham.getTenSP());
         gia.setText(Comon.formatMoney(sanPham.getDonGia())+" VND");
@@ -78,7 +78,7 @@ public class ChiTietSanPham extends AppCompatActivity {
         GioHang gioHang= new GioHang(MACTHD,"",sanPham.getMaSP(),sanPham.getTenSP(),sanPham.getDonGia(),1,sanPham.getDonGia(),sanPham.getLinkAnh());
         int y=0;
         if(Comon.gioHangArrayList.size()==0){
-            MACTHD=Comon.id+"CTHD"+Comon.gioHangArrayList.size();
+            MACTHD=Comon.id+"CTHD"+RanDomAnh(0,1000000000);
             gioHang.setMaCTHD(MACTHD);
         }else if(Comon.gioHangArrayList.size()>0) {
             for(GioHang e: Comon.gioHangArrayList) {
@@ -141,19 +141,23 @@ public class ChiTietSanPham extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int b=0;
-                for(GioHang e: Comon.gioHangArrayList) {
-                    if(e.getMaSP().equals(gioHang.getMaSP())){
+                for(int y=0;y<Comon.gioHangArrayList.size();y++) {
+                    GioHang gioHang1=Comon.gioHangArrayList.get(y);
+                    if(gioHang1.getMaSP().equals(gioHang.getMaSP())){
                         //  Toast.makeText(ChiTietSanPham.this, "thuan ", Toast.LENGTH_LONG).show();
                         for (int i=0;i<Comon.toopingArrayList.size();i++){
                             Tooping tooping1=Comon.toopingArrayList.get(i);
-                            if(tooping1.getMCTHD().trim().equals(e.getMaCTHD().trim())){
+                            if(tooping1.getMCTHD().trim().equals(gioHang1.getMaCTHD().trim())){
                                 if(tooping.getChonDuong().equals("")&&tooping.getSize().equals("")&&tooping.getChonDa().equals("")&&tooping.getViPhu().equals("")){
+                                    Comon.gioHangArrayList.set(y,gioHang);
                                     Intent intent=new Intent(ChiTietSanPham.this, GioHangActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
                                     finish();
                                     break;
                                 }else {
+                                    Comon.gioHangArrayList.set(y,gioHang);
+                                  //  Toast.makeText(ChiTietSanPham.this, "so luong"+gioHang.getSoLuongMua(), Toast.LENGTH_LONG).show();
                                     Comon.toopingArrayList.set(i,tooping);
                                     Intent intent=new Intent(ChiTietSanPham.this, GioHangActivity.class);
                                     startActivity(intent);
@@ -281,27 +285,26 @@ public class ChiTietSanPham extends AppCompatActivity {
         al.setMessage("Thêm vào giỏ hàng");
         al.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(DialogInterface dialogInterface, int e) {
                 int b=0;
-                for(GioHang e: Comon.gioHangArrayList) {
-                    if(e.getMaSP().equals(gioHang.getMaSP())){
-                        for (int y=0;y<Comon.toopingArrayList.size();y++){
-                            Tooping tooping1=Comon.toopingArrayList.get(y);
-                            if(tooping1.getMCTHD().trim().equals(gioHang.getMaCTHD().trim())){
+                for(int y=0;y<Comon.gioHangArrayList.size();y++) {
+                    GioHang gioHang1=Comon.gioHangArrayList.get(y);
+                    if(gioHang1.getMaSP().equals(gioHang.getMaSP())){
+                        for (int i=0;i<Comon.toopingArrayList.size();i++){
+                            Tooping tooping1=Comon.toopingArrayList.get(i);
+                            if(tooping1.getMCTHD().trim().equals(gioHang1.getMaCTHD().trim())){
                                 if(tooping.getChonDuong().equals("")&&tooping.getSize().equals("")&&tooping.getChonDa().equals("")&&tooping.getViPhu().equals("")){
+                                    Comon.gioHangArrayList.set(y,gioHang);
                                     Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
-
                                     break;
                                 }else {
-                                    Comon.toopingArrayList.set(y,tooping);
+                                    Comon.gioHangArrayList.set(y,gioHang);
+                                    Comon.toopingArrayList.set(i,tooping);
                                     Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
-
                                     break;
                                 }
-
                             }
                         }
-                      //  Toast.makeText(ChiTietSanPham.this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_LONG).show();
                         break;
                     }else{
                         b++;
@@ -359,24 +362,31 @@ public class ChiTietSanPham extends AppCompatActivity {
 
     public void Tooping( GioHang gioHang){
         tooping =new Tooping("","","","","","");
+        int b=0;
         if(Comon.toopingArrayList.size()==0){
-            maTP=Comon.id+"maTP"+Comon.toopingArrayList.size();
+            maTP=Comon.id+"maTP"+RanDomAnh(0,1000000000);
             tooping.setMaTP(maTP);
         }else if(Comon.toopingArrayList.size()>0) {
-
             boolean a=true;
             do{
                 maTP=Comon.id+"maTP"+RanDomAnh(0,1000000000);
                 for(Tooping e: Comon.toopingArrayList) {
                     if(!e.getMaTP().equals(maTP)){
-                        tooping.setMaTP(maTP);
-                        a=false;
-                        break;
+                        b++;
+                        if(b==Comon.toopingArrayList.size()){
+                            tooping.setMaTP(maTP);
+                            a=false;
+                            break;
+                        }
                     }else {
                         a=true;
+                        break;
                     }
                 }
             }while (a);
+            if(b==Comon.toopingArrayList.size()){
+                tooping.setMaTP(maTP);
+            }
         }
         tooping.setMCTHD(gioHang.getMaCTHD());
         ChonDuong.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

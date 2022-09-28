@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Đơn đặt hàng của bạn đã được tiếp nhận thông tin "
+                android:text="Đơn đặt hàng của bạn sẽ được tiếp nhận thông tin "
                 android:textColor="@color/black" />
             <TextView
                 android:layout_marginTop="10dp"
@@ -157,7 +157,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/tieptheo"
+                android:id="@+id/gưi"
                 android:layout_width="217dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

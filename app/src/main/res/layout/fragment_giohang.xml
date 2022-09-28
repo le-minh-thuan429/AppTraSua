@@ -12,13 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <TextView
-            android:gravity="center_vertical"
-            android:id="@+id/quaylai"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/trolai"
-            android:layout_height="40dp"/>
+
         <TextView
 
             android:layout_gravity="center"

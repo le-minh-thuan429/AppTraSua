@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:text="Xin chúc mừng"
-        android:background="@drawable/bg_yellow_corner1"
+        android:background="@drawable/bg_yellow_corner5"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -23,36 +23,47 @@
             android:textStyle="bold"
             android:layout_gravity="left"
             android:id="@+id/DanhMuc"
-            android:text="Win"/>
+            android:text="Thông báo"/>
     </LinearLayout>
 
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="340dp"
+        android:layout_height="1dp"
+        android:background="@color/Red" />
 
 
-
-    <EditText
+    <TextView
         android:id="@+id/DuLieu"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/vien"
-        android:padding="10dp"
-        android:hint="Nhập thông tin"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:gravity="left" />
-    <EditText
-        android:id="@+id/DuLieuSDT"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/vien"
-        android:padding="10dp"
-        android:hint="Nhập số điện thoại"
-        android:ems="10"
-        android:inputType="number"
-        android:visibility="gone"
-        android:gravity="left" />
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Gửi yêu cầu đến cửa hàng"
+        android:textColor="#FD0000"
+        android:textSize="20dp"
+        android:textStyle="normal" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:text="Đơn đặt hàng của bạn sẽ được tiếp nhận thông tin "
+        android:textColor="@color/black" />
+    <TextView
+
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:text="Chúng tôi sẽ liên hệ để xác nhận trước khi  giao hàng"
+        android:textColor="@color/black" />
+
 
     <TableRow
+        android:layout_marginTop="5dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content">
@@ -63,8 +74,10 @@
             android:layout_margin="9dp"
             android:textAllCaps="false"
             android:text="Ok"
+            android:textColor="@color/black"
             style="@style/Button5"
-            android:backgroundTint="#C5C1B5"
+            android:backgroundTint="@color/white"
+            android:elevation="10dp"
             android:id="@+id/Ok"/>
 
         <Button
@@ -74,8 +87,10 @@
             android:layout_margin="9dp"
             android:textAllCaps="false"
             android:text="Trở lại"
+            android:textColor="@color/black"
+            android:elevation="10dp"
             style="@style/Button5"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="@color/white"
             android:id="@+id/trolai"/>
     </TableRow>
 

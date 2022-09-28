@@ -2,8 +2,10 @@ package com.example.apptrasua.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageView;
@@ -31,7 +33,20 @@ public class AdapterTimKiemTrangChu extends ArrayAdapter<SanPham> {
             convertView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_timkiem,parent,false);
         }
 
-         AdapterTrangChu.TrangChuView.layout_nen.setVisibility(View.GONE);
+        convertView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    InputMethodManager imm = (InputMethodManager) getContext()
+                            .getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(
+                            view.getApplicationWindowToken(), 0);
+                }
+                return false;
+            }
+        });
+
+        AdapterTrangChu.TrangChuView.layout_nen.setVisibility(View.GONE);
 
         TextView textView=convertView.findViewById(R.id.tv_title);
         ImageView img=convertView.findViewById(R.id.img);

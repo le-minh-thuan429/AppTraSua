@@ -96,7 +96,7 @@
                             android:textStyle="normal" />
 
                         <Button
-
+                            android:id="@+id/giothieu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
@@ -110,19 +110,7 @@
 
                             android:textStyle="normal" />
 
-                        <Button
 
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/white"
-                            android:drawableLeft="@drawable/tttaikhoan"
-                            android:elevation="5dp"
-                            android:gravity="center|left"
-                            android:drawablePadding="16dp"
-                            android:padding="10dp"
-                            android:hint="Thiết lập tài khoản"
-                            android:textColorHint="@color/black"
-                            android:textStyle="normal" />
 
                     </LinearLayout>
 
