@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_white_corner_16"
+    android:layout_margin="0dp"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/Anhdaidien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:hint="Ảnh đại diện"
+            android:textColorHint="#4283B6"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:id="@+id/AnhBia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:hint="Ảnh bìa"
+            android:textColorHint="#4283B6"
+            android:textStyle="normal|bold" />
+    </LinearLayout>
+</LinearLayout>

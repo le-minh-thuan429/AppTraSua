@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_white_corner_16"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:text="Xin chúc mừng"
+        android:background="@drawable/bg_yellow_corner1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#0C0C0B"
+            android:layout_marginLeft="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="left"
+            android:id="@+id/DanhMuc"
+            android:text="Win"/>
+    </LinearLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/DuLieu"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/vien"
+        android:padding="10dp"
+        android:hint="Nhập thông tin"
+        android:ems="10"
+        android:gravity="left" />
+    <EditText
+        android:id="@+id/DuLieuSDT"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/vien"
+        android:padding="10dp"
+        android:hint="Nhập số điện thoại"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="gone"
+        android:gravity="left" />
+
+    <TableRow
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:textAllCaps="false"
+            android:text="Ok"
+            style="@style/Button5"
+            android:backgroundTint="#C5C1B5"
+            android:id="@+id/Ok"/>
+
+        <Button
+
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:textAllCaps="false"
+            android:text="Trở lại"
+            style="@style/Button5"
+            android:backgroundTint="#FFC107"
+            android:id="@+id/trolai"/>
+    </TableRow>
+
+
+</LinearLayout>
