@@ -57,6 +57,20 @@ public class SanPhamTheoLoai extends AppCompatActivity {
 
         AdapterTimKiemTheoLoai countryadapter=new AdapterTimKiemTheoLoai(SanPhamTheoLoai.this, R.layout.item_timkiem,getListSP(loaiSP.getMaLoai()));
         timkiem.setAdapter(countryadapter);
+
+        timkiem.setCursorVisible(false);
+
+        timkiem.setTextIsSelectable(true);//Để làm cho edit_text Có thể chọn (sao chép / cắt / dán / chọn / chọn tất cả)
+        timkiem.requestFocusFromTouch();
+        timkiem.clearFocus();//Để xóa tiêu điểm ở chế độ cảm ứng
+
+       timkiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               timkiem.requestFocus();
+               timkiem.setCursorVisible(true);
+            }
+        });
         gotimkiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

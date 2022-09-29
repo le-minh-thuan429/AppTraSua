@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.FrameLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,7 +24,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apptrasua.Comon;
 import com.example.apptrasua.DatabaseHandler;
-import com.example.apptrasua.MainActivity;
 import com.example.apptrasua.Models.LoaiSP;
 import com.example.apptrasua.Models.SanPham;
 import com.example.apptrasua.R;
@@ -38,7 +38,6 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
     final String DATABASE_NAME = "AppTraSua.db";
     SQLiteDatabase database;
     Context context;
-    MainActivity mainActivity;
     public AdapterTrangChu(Context context) {
         this.context=context;
     }
@@ -68,18 +67,30 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
         holder.listSP.setLayoutManager(gridLayoutManager);
         AdapterSanPham useAdapter=new AdapterSanPham(getListSP(),context);
         holder.listSP.setAdapter(useAdapter);
-        mainActivity=(MainActivity) context;
-
 
 
         AdapterTimKiemTrangChu countryadapter=new AdapterTimKiemTrangChu(context, R.layout.item_timkiem,getSPTimKiem());
         holder.timkiem.setAdapter(countryadapter);
+        holder.timkiem.setCursorVisible(false);
 
+        holder.timkiem.setTextIsSelectable(true);//Để làm cho edit_text Có thể chọn (sao chép / cắt / dán / chọn / chọn tất cả)
+        holder.timkiem.requestFocusFromTouch();
+        holder.timkiem.clearFocus();//Để xóa tiêu điểm ở chế độ cảm ứng
+
+        holder.timkiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.timkiem.requestFocus();
+                holder.timkiem.setCursorVisible(true);
+            }
+        });
+        //holder.timkiem.setEnabled(false);
 
         holder.gotimkiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String a= holder.timkiem.getText().toString().toLowerCase().trim();
+                holder.timkiem.setEnabled(true);
                 if(Comon.DinhDangTimkiem(a)){
                     Intent intent1 = new Intent(context, SanPhamTimKiem.class);
                     intent1.putExtra("abc", a);
@@ -166,7 +177,6 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
                 List.add(sanPham);
 
             }while (cursor.moveToNext());
-
             close();
         }catch (Exception e){
             AlertDialog.Builder al = new AlertDialog.Builder(context);
@@ -202,10 +212,11 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
     public static class TrangChuView extends RecyclerView.ViewHolder {
 
         public RecyclerView listSP,listLSP;
-        public AutoCompleteTextView timkiem;
+        public static AutoCompleteTextView timkiem;
         public static FrameLayout layout_nen;
         public TextView gotimkiem;
         public CircleImageView profile_image;
+        public TableRow countries;
         public TrangChuView(@NonNull View itemView) {
             super(itemView);
             listLSP=itemView.findViewById(R.id.listLSP);
@@ -214,6 +225,7 @@ public class AdapterTrangChu extends RecyclerView.Adapter<AdapterTrangChu.TrangC
             layout_nen =itemView.findViewById(R.id.layout_nen);
             gotimkiem =itemView.findViewById(R.id.gotimkiem);
             profile_image =itemView.findViewById(R.id.profile_image);
+            countries =itemView.findViewById(R.id.countries);
         }
     }
 }

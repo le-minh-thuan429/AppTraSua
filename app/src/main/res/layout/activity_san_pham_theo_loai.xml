@@ -83,9 +83,12 @@
                         android:textSize="16sp"
                         android:gravity="left"
                         android:dropDownAnchor="@id/countries"
+                        android:cursorVisible="false"
+                        android:focusableInTouchMode="true"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:hint="Tìm kiếm" />
                 </TableRow>
-
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listSP"

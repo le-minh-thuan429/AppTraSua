@@ -86,8 +86,6 @@ public class HoanThanh extends AppCompatActivity {
             sqLiteStatement.executeInsert();
             InsertChiTietDonHang();
             close();
-
-
         }catch (Exception e){
             AlertDialog.Builder al = new AlertDialog.Builder(HoanThanh.this);
             al.setTitle("Database Demo");

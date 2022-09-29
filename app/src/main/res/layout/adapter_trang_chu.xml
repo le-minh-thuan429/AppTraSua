@@ -92,6 +92,11 @@
             android:dropDownAnchor="@id/countries"
             android:dropDownHeight="wrap_content"
             android:imeOptions="actionDone"
+            android:cursorVisible="false"
+            android:maxLines="1"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:focusable="true"
             android:hint="Tìm kiếm" />
     </TableRow>
 

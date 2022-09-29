@@ -48,6 +48,7 @@ public class AdapterTimKiemTrangChu extends ArrayAdapter<SanPham> {
 
         AdapterTrangChu.TrangChuView.layout_nen.setVisibility(View.GONE);
 
+       // AdapterTrangChu.TrangChuView.timkiem.setEnabled(true);
         TextView textView=convertView.findViewById(R.id.tv_title);
         ImageView img=convertView.findViewById(R.id.img);
 
@@ -90,6 +91,13 @@ public class AdapterTimKiemTrangChu extends ArrayAdapter<SanPham> {
 
             @Override
             public CharSequence convertResultToString(Object resultValue) {
+               /* String TenSP=((SanPham) resultValue).getTenSP();
+                if(Comon.DinhDangTimkiem(TenSP)){
+                    Intent intent1 = new Intent(getContext(), SanPhamTimKiem.class);
+                    intent1.putExtra("abc", a);
+                    getContext().startActivity(intent1);
+                }*/
+              //  Toast.makeText(getContext(),"thuannnn", Toast.LENGTH_SHORT).show();
                 return ((SanPham) resultValue).getTenSP();
             }
 
@@ -97,9 +105,7 @@ public class AdapterTimKiemTrangChu extends ArrayAdapter<SanPham> {
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
                 clear();
                 addAll( (List<SanPham>) filterResults.values);
-
-                    AdapterTrangChu.TrangChuView.layout_nen.setVisibility(View.VISIBLE);
-
+                AdapterTrangChu.TrangChuView.layout_nen.setVisibility(View.VISIBLE);
                 notifyDataSetChanged();
             }
         };

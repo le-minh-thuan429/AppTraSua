@@ -67,8 +67,21 @@ public class ChiTietSanPham extends AppCompatActivity {
 
         AnhXa();
 
+
+
         Bundle bundle=getIntent().getExtras();
         sanPham=(SanPham)bundle.get("SanPham");
+
+        chitietsp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ChiTietSanPham.this, ChiTietSPCuThe.class);
+                Bundle bundle=new Bundle();
+                bundle.putSerializable("SanPham", sanPham);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
         tenSP.setText(sanPham.getTenSP());
         gia.setText(Comon.formatMoney(sanPham.getDonGia())+" VND");
