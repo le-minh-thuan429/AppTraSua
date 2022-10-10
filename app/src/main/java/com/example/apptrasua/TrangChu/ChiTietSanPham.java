@@ -67,8 +67,6 @@ public class ChiTietSanPham extends AppCompatActivity {
 
         AnhXa();
 
-
-
         Bundle bundle=getIntent().getExtras();
         sanPham=(SanPham)bundle.get("SanPham");
 
@@ -294,7 +292,7 @@ public class ChiTietSanPham extends AppCompatActivity {
     }
     public void GioHang(GioHang gioHang){
         AlertDialog.Builder al = new AlertDialog.Builder(ChiTietSanPham.this);
-        al.setTitle("Database Demo");
+        al.setTitle("Giỏ hàng");
         al.setMessage("Thêm vào giỏ hàng");
         al.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
