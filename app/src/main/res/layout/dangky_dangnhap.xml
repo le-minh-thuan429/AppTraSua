@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:gravity="center"
+                android:visibility="visible"
                 android:orientation="vertical"
                 android:padding="25dp">
 

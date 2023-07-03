@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_donhang"
+    app:cardCornerRadius="10dp"
+    android:padding="10dp"
+    app:cardElevation="10dp"
+    android:layout_margin="10dp"
+    tools:ignore="RtlCompat">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ChiTietDonHang"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/donhang3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:text="Chi tiết"
+                    android:textSize="13dp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center|left"
+                        android:textColor="@color/black"
+                        android:text="Mã hóa đơn :"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/MaHD"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center|left"
+                        android:gravity="center|right"
+                        android:text="mmmmm"
+                        android:textColor="@android:color/darker_gray" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center|left"
+                        android:textColor="@color/black"
+                        android:text="Họ tên :"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/HoTen"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center|left"
+                        android:gravity="center|right"
+                        android:text="mmmmm"
+                        android:textColor="@android:color/darker_gray" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center|left"
+                        android:text="Thành tiền : "
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/Tong"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center|left"
+                        android:gravity="center|right"
+                        android:text="mmmmm"
+                        android:textSize="20dp"
+                        android:textColor="#FF0202" />
+                </TableRow>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TrangThaiDonHang"
+            style="@style/Button5"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="Hủy đơn hàng"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+        <TableRow
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:textAllCaps="false"
+                android:text="Giao"
+                style="@style/Button5"
+                android:backgroundTint="#C5C1B5"
+                android:id="@+id/Giao"/>
+
+            <Button
+
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:textAllCaps="false"
+                android:text="Hủy"
+                style="@style/Button5"
+                android:backgroundTint="#FFC107"
+                android:id="@+id/Huy"/>
+        </TableRow>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

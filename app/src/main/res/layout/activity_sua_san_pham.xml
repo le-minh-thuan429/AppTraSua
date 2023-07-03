@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="Admin.SuaSanPham">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <FrameLayout
+                android:id="@+id/layout_nen"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_gravity="top"
+                android:background="#F38CA2">
+
+                <ImageView
+                    android:layout_width="176dp"
+                    android:layout_height="107dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/anh3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_yellow_corner4" />
+
+
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sửa thông tin sản phẩm"
+                    android:layout_gravity="center"
+                    android:textSize="23dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp" />
+                <LinearLayout
+                    android:id="@+id/loginlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    android:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:hint="Tên sản phẩm"
+                        app:boxStrokeColor="#877B7B"
+                        app:boxStrokeWidth="1dp"
+                        app:shapeAppearanceOverlay="@style/Button4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tensanpham"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName|textEmailAddress"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:hint="Đơn giá"
+                        app:boxStrokeColor="#877B7B"
+                        app:boxStrokeWidth="1dp"
+                        app:shapeAppearanceOverlay="@style/Button4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dongia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:hint="Tình trạng"
+                        app:boxStrokeColor="#877B7B"
+                        app:boxStrokeWidth="1dp"
+                        app:shapeAppearanceOverlay="@style/Button4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tinhtrang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName|textEmailAddress"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:hint="Link ảnh"
+                        app:boxStrokeColor="#877B7B"
+                        app:boxStrokeWidth="1dp"
+                        app:shapeAppearanceOverlay="@style/Button4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName|textEmailAddress"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/Sua"
+                    style="@style/Button5"
+                    android:layout_width="291dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="#F44336"
+                    android:text="Sửa sản phẩm"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -77,7 +77,7 @@ public class HoanThanh extends AppCompatActivity {
             sqLiteStatement.bindString(2,donHang.getHoTen());
             sqLiteStatement.bindString(3,donHang.getPTThanhToan());
             sqLiteStatement.bindString(4,donHang.getDiaChi());
-            sqLiteStatement.bindDouble(5,0);
+            sqLiteStatement.bindDouble(5,donHang.getPhiVanChuyen());
             sqLiteStatement.bindDouble(6,donHang.getTienHang());
             sqLiteStatement.bindDouble(7,donHang.getThanhTien());
             sqLiteStatement.bindString(8,donHang.getTrangThai());

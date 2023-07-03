@@ -208,87 +208,9 @@
                                     android:layout_height="wrap_content"
                                     android:text="Thanh toán khi nhận hàng" />
 
-                                <RadioButton
-                                    android:id="@+id/TTChuyenkhoan"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Thanh toán qua ngân hàng" />
 
                             </RadioGroup>
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/layout_TTChuyenKhoan"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="3dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginBottom="10dp"
-                                app:cardElevation="10dp"
-                                android:visibility="gone"
-                                app:cardCornerRadius="10dp"
-                                android:orientation="vertical"
-                                android:padding="15dp"
-                                android:paddingLeft="10dp">
 
-                                <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:padding="10dp"
-                                    android:layout_height="wrap_content">
-                                    <FrameLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content">
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_gravity="top|left"
-                                            android:gravity="left"
-                                            android:paddingLeft="10dp"
-                                            android:orientation="vertical">
-                                            <TextView
-                                                android:gravity="center"
-                                                android:layout_width="wrap_content"
-                                                android:textColor="#297406"
-                                                android:text="Vietcombank"
-                                                android:textSize="20dp"
-                                                android:textStyle="bold"
-                                                android:layout_height="wrap_content"/>
-                                            <TextView
-                                                android:layout_marginTop="10dp"
-                                                android:gravity="center"
-                                                android:layout_width="wrap_content"
-                                                android:textColor="@color/black"
-                                                android:text="STK: 033201000206"
-                                                android:textStyle="bold"
-                                                android:layout_height="wrap_content"/>
-                                            <TextView
-                                                android:gravity="center"
-                                                android:layout_width="wrap_content"
-                                                android:textColor="@color/black"
-                                                android:text="Chủ tài khoản: Lê Minh Thuận "
-                                                android:textSize="15dp"
-                                                android:textStyle="bold"
-                                                android:layout_height="wrap_content"/>
-                                            <TextView
-                                                android:gravity="center"
-                                                android:layout_width="wrap_content"
-                                                android:textColor="@color/black"
-                                                android:text="Chị nhánh: Nam Hà Nội "
-                                                android:textSize="15dp"
-                                                android:textStyle="bold"
-                                                android:layout_height="wrap_content"/>
-
-                                        </LinearLayout>
-
-
-                                    </FrameLayout>
-
-
-                                </LinearLayout>
-                            </androidx.cardview.widget.CardView>
                         </LinearLayout>
 
 
@@ -523,7 +445,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:cardElevation="10dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:cardCornerRadius="10dp"
                 android:orientation="vertical"
                 android:padding="15dp"
@@ -559,7 +481,28 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@android:color/transparent"
+
                                 />
+                            <LinearLayout
+                                android:id="@+id/ViTriHienTai"
+                                android:padding="10dp"
+                                android:background="@drawable/vien"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                               >
+                                <TextView
+                                    android:textColor="@color/black"
+                                    android:drawablePadding="5dp"
+                                    android:drawableLeft="@drawable/baseline_location_toado"
+                                    tools:ignore="DuplicateIds"
+                                    android:textSize="15dp"
+                                    android:hint="Sử dụng vị trí hiện tại của tôi"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"/>
+
+                            </LinearLayout>
                             <TextView
                                 android:layout_gravity="left"
                                 android:layout_width="wrap_content"
@@ -569,15 +512,22 @@
                                 android:textSize="10dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_height="wrap_content"/>
-                            <EditText
+
+                            <TextView
                                 android:id="@+id/diachi"
-                                android:paddingLeft="10dp"
-                                android:inputType="textPersonName"
-                                android:background="@drawable/vien"
                                 android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/vien"
+                                android:gravity="left"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="1dp"
+                                android:paddingBottom="5dp"
+                                android:hint="Số nhà / Ngõ / Tỉnh / thành phố, Quận/huyện, Phường/xã"
+                                android:textColor="#0E0E0E"
                                 android:textSize="15dp"
-                                android:hint="Tỉnh / thành phố, Quận/huyện, Phường/xã"
-                                android:layout_height="40dp"/>
+                                android:textStyle="normal" />
 
                             <TextView
                                 android:visibility="gone"
@@ -598,6 +548,7 @@
                                 android:textSize="15dp"
                                 android:hint="Tên đường,Tòa nhà, Số nhà"
                                 android:layout_marginTop="10dp"
+                                android:visibility="gone"
                                 android:layout_height="40dp"/>
 
                             <TextView
@@ -610,6 +561,17 @@
                                 android:textStyle="bold"
                                 android:textSize="10dp"
                                 android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/khoangcach"
+                                android:textColor="@color/black"
+                                android:padding="5dp"
+                                android:textSize="15dp"
+                                android:layout_margin="5dp"
+                                android:layout_gravity="left"
+                                tools:ignore="DuplicateIds"
+                                android:text="Quảng đường giao hàng:"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"/>
 
 
                             <CheckBox

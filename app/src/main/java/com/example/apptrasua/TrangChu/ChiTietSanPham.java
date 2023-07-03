@@ -88,6 +88,7 @@ public class ChiTietSanPham extends AppCompatActivity {
 
         GioHang gioHang= new GioHang(MACTHD,"",sanPham.getMaSP(),sanPham.getTenSP(),sanPham.getDonGia(),1,sanPham.getDonGia(),sanPham.getLinkAnh());
         int y=0;
+        // Lấy mã MACTHD
         if(Comon.gioHangArrayList.size()==0){
             MACTHD=Comon.id+"CTHD"+RanDomAnh(0,1000000000);
             gioHang.setMaCTHD(MACTHD);

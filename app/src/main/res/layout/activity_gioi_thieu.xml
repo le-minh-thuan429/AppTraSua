@@ -43,27 +43,283 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textStyle="bold"
+                android:textStyle="italic|bold"
                 android:textColor="@color/black"
                 android:textSize="30dp"
                 android:text="Trà sữa Bubble" />
-            <FrameLayout
-                android:layout_marginTop="10dp"
-                android:id="@+id/layout_gioithieu"
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:padding="20dp"
+                app:cardElevation="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="270dp"
-                    android:gravity="left"
-                    android:paddingLeft="15dp"
-                    android:text="    Thương hiệu BUBBLE BAR được công ty TNHH BUBBLE chính thức đưa vào hoạt động tại thị trường Việt Nam từ năm 2019. Rất nhanh chóng, “Bubble Bar” trở thành điểm đến quen thuộc của các fan trà sữa bởi hương vị đồ uống thơm ngon, dịch vụ chất lượng và không gian thân thiện. Với tiêu chí “Nguyên liệu sạch và có nguồn gốc xuất sứ rõ ràng mới có thể tạo ra những ly đồ uống đạt chất lượng về cả hương vị lẫn nguyên liệu cấu thành”. “Bubble Bar” được ra đời với những ly đồ uống đại diện cho tính cách sôi nổi, đam mê, tự tin và tràn đầy nhiệt huyết của giới trẻ hiện đại."
-                    android:textColor="@color/black"
-                    android:textStyle="normal" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-            </FrameLayout>
+                    <TextView
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="5dp"
+                        android:text="Giới thiệu"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold|normal" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="10dp"
+                        android:gravity="right"
+                        android:padding="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#0E0E0E"
+                        android:textSize="15dp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Topping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardElevation="10dp"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/mota"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:text="    Thương hiệu BUBBLE BAR được công ty TNHH BUBBLE chính thức đưa vào hoạt động tại thị trường Việt Nam từ năm 2019. Rất nhanh chóng, “Bubble Bar” trở thành điểm đến quen thuộc của các fan trà sữa bởi hương vị đồ uống thơm ngon, dịch vụ chất lượng và không gian thân thiện. Với tiêu chí “Nguyên liệu sạch và có nguồn gốc xuất sứ rõ ràng mới có thể tạo ra những ly đồ uống đạt chất lượng về cả hương vị lẫn nguyên liệu cấu thành”. “Bubble Bar” được ra đời với những ly đồ uống đại diện cho tính cách sôi nổi, đam mê, tự tin và tràn đầy nhiệt huyết của giới trẻ hiện đại."
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardElevation="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="5dp"
+                        android:text="Vị trí"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold|normal" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="10dp"
+                        android:gravity="right"
+                        android:padding="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#0E0E0E"
+                        android:textSize="15dp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ViTri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardElevation="10dp"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/MapViewId"
+                        android:layout_width="match_parent"
+                        android:layout_height="195dp"
+                        android:text="Hello World!"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ToaDo">
+                    </com.google.android.gms.maps.MapView>
+
+                    <TextView
+                        android:id="@+id/diachi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="left"
+                        android:text="Số điện thoại: 0825316338"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardElevation="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="5dp"
+                        android:text="Liên lạc và hỗ trợ"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold|normal" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="10dp"
+                        android:gravity="right"
+                        android:padding="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="1dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#0E0E0E"
+                        android:textSize="15dp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/LienLac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardElevation="10dp"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:text="Số điện thoại: 0825316338"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:text="Số Zalo : 0825316338"
+                        android:gravity="left"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:layout_margin="10dp"
+                        android:id="@+id/call"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:background="@drawable/switch_trcks"
+                        android:drawableTop="@drawable/baseline_call_24"
+                        android:elevation="15dp"
+                        app:backgroundTint="#CC0909"
+                        tools:ignore="RtlCompat" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <Button
 
                 android:id="@+id/Thoat"

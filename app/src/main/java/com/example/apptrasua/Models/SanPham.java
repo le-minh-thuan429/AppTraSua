@@ -34,6 +34,30 @@ public class SanPham implements Serializable {
         return LinkAnh;
     }
 
+    public void setMaSP(String maSP) {
+        MaSP = maSP;
+    }
+
+    public void setTenSP(String tenSP) {
+        TenSP = tenSP;
+    }
+
+    public void setDonGia(int donGia) {
+        DonGia = donGia;
+    }
+
+    public void setMaLoai(String maLoai) {
+        MaLoai = maLoai;
+    }
+
+    public void setTinhTrang(String tinhTrang) {
+        TinhTrang = tinhTrang;
+    }
+
+    public void setLinkAnh(String linkAnh) {
+        LinkAnh = linkAnh;
+    }
+
     public SanPham(String maSP, String tenSP, int donGia, String maLoai, String tinhTrang, String linkAnh) {
         MaSP = maSP;
         TenSP = tenSP;

@@ -3,7 +3,9 @@ package com.example.apptrasua.Models;
 import android.text.TextUtils;
 import android.util.Patterns;
 
-public class Taikhoan {
+import java.io.Serializable;
+
+public class Taikhoan implements Serializable {
    String id ;
     String TenTK ;
     String Email ;

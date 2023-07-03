@@ -8,10 +8,20 @@ public class DonHang implements Serializable {
     private  String PTThanhToan;
     private  String DiaChi;
 
+    private  int PhiVanChuyen;
     private  int TienHang;
     private  int ThanhTien;
     private  String TrangThai;
     private  String MaKH;
+
+
+    public int getPhiVanChuyen() {
+        return PhiVanChuyen;
+    }
+
+    public void setPhiVanChuyen(int phiVanChuyen) {
+        PhiVanChuyen = phiVanChuyen;
+    }
 
     public void setMaDH(String maDH) {
         MaDH = maDH;
@@ -85,11 +95,12 @@ public class DonHang implements Serializable {
         return id;
     }
 
-    public DonHang(String maDH, String hoTen, String PTThanhToan, String diaChi, int tienHang, int thanhTien, String trangThai, String maKH, int id) {
+    public DonHang(String maDH, String hoTen, String PTThanhToan, String diaChi, int phiVanChuyen, int tienHang, int thanhTien, String trangThai, String maKH, int id) {
         MaDH = maDH;
         HoTen = hoTen;
         this.PTThanhToan = PTThanhToan;
         DiaChi = diaChi;
+        PhiVanChuyen = phiVanChuyen;
         TienHang = tienHang;
         ThanhTien = thanhTien;
         TrangThai = trangThai;

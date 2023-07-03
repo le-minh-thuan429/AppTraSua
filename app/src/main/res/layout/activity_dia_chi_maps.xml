@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CaNhan.DiaChiMaps">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:gravity="center_vertical"
+            android:id="@+id/quaylai"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/trolai"
+            android:layout_height="40dp"/>
+        <TextView
+
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Địa chỉ giao hàng"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_height="40dp"/>
+
+
+
+    </FrameLayout>
+    <TextView
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="350dp"
+        android:background="@color/black"
+        android:layout_height="2dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_DCTT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingLeft="10dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/Search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/vien"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:iconifiedByDefault="false"
+                app:queryHint="Nhập địa chỉ" />
+
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/MapViewId"
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:text="Hello World!"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ToaDo">
+
+
+            </com.google.android.gms.maps.MapView>
+
+            <Button
+                android:id="@+id/XacNhan"
+                android:layout_width="344dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#FB1717"
+                android:elevation="15dp"
+                android:text="Xác nhận"
+                android:textAllCaps="false" />
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

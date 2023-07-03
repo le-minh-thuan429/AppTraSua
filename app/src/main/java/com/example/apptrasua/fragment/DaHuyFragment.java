@@ -105,7 +105,7 @@ public class DaHuyFragment extends Fragment {
                 return List;
             }else {
                 do{
-                    DonHang donHang=new DonHang(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getInt(5),cursor.getInt(6),cursor.getString(7),cursor.getString(8),cursor.getInt(9));
+                    DonHang donHang=new DonHang(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getInt(5),cursor.getInt(6),cursor.getString(7),cursor.getString(8),cursor.getInt(9));
                     List.add(donHang);
                 }while (cursor.moveToNext());
             }

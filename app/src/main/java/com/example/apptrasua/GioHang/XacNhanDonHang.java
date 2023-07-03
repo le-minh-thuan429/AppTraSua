@@ -26,7 +26,8 @@ import java.util.Random;
 
 public class XacNhanDonHang extends AppCompatActivity {
 
-    TextView ViewTTDH,MAHD,HoTen,PTTT,Diachi,TienHang, Tong, quaylai;
+    TextView ViewTTDH,MAHD,HoTen,PTTT,Diachi,TienHang, Tong, quaylai ;
+    TextView phivanchuyen;
     CardView layout_TTDH;
     Button Tieptheo;
     GiaoHang giaoHang;
@@ -36,6 +37,7 @@ public class XacNhanDonHang extends AppCompatActivity {
     SQLiteDatabase database;
     String MaHD="";
     String DiaChi;
+    float quangduong;
     AdapterXacNhanGioHang adapterXacNhanGioHang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +56,38 @@ public class XacNhanDonHang extends AppCompatActivity {
         Tong=findViewById(R.id.Tong);
         quaylai=findViewById(R.id.quaylai);
 
+        phivanchuyen=findViewById(R.id.phivanchuyen);
+
+
         Bundle bundle=getIntent().getExtras();
         giaoHang= (GiaoHang) bundle.get("ThongTinGiaoHang");
         DiaChi=giaoHang.getDiaChi()+"\n"+giaoHang.getDiaChiCuThe() ;
-        donHang=new DonHang(TaoMaDH(),giaoHang.getHoTen(),giaoHang.getPTThanhToan(),DiaChi, Tong(), Tong(),"Xác nhận",giaoHang.getMaKH(),giaoHang.getId());
+        quangduong=Comon.QuangDuong;
+
+
+        donHang=new DonHang(TaoMaDH(),giaoHang.getHoTen(),giaoHang.getPTThanhToan(),DiaChi,0, Tong(), Tong(),"Xác nhận",giaoHang.getMaKH(),giaoHang.getId());
+        if(quangduong>=50){
+            donHang.setPhiVanChuyen(200000);
+        }else if (quangduong>=30&&quangduong<50){
+            donHang.setPhiVanChuyen(150000);
+        }
+        else if (quangduong>=20&&quangduong<30){
+            donHang.setPhiVanChuyen(100000);
+        }
+        else if (quangduong>=10&&quangduong<20){
+            donHang.setPhiVanChuyen(70000);
+        }
+        else if (quangduong<10){
+            donHang.setPhiVanChuyen(40000);
+        }
+        donHang.setThanhTien(donHang.getPhiVanChuyen()+donHang.getTienHang());
+
 
         MAHD.setText(donHang.getMaDH());
         HoTen.setText(donHang.getHoTen());
         PTTT.setText(donHang.getPTThanhToan());
         Diachi.setText(donHang.getDiaChi());
+        phivanchuyen.setText(Comon.formatMoney(donHang.getPhiVanChuyen())+" VND");
         TienHang.setText(Comon.formatMoney(donHang.getTienHang())+" VND");
         Tong.setText(Comon.formatMoney(donHang.getThanhTien())+" VND");
         list.setVisibility(View.VISIBLE);

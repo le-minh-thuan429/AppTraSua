@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item android:id="@+id/DanhMuc"
+            android:icon="@drawable/ttdonhang"
+            android:title="Danh mục sản phẩm" />
+
+        <item android:id="@+id/SanPham"
+            android:icon="@drawable/gioithieu"
+            android:title="Danh sách sản phẩm" />
+
+        <item android:id="@+id/DonHang"
+            android:icon="@drawable/ttcanhan"
+            android:title="Tài khoản và Đơn hàng" />
+
+    </group>
+
+
+</menu>

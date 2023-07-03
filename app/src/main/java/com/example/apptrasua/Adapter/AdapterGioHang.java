@@ -1,5 +1,6 @@
 package com.example.apptrasua.Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -50,7 +51,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
     int a;
     String maTP;
     @Override
-    public void onBindViewHolder(@NonNull GioHangView holder, int position) {
+    public void onBindViewHolder(@NonNull GioHangView holder , @SuppressLint("RecyclerView") int position) {
         final GioHang gioHang=this.arrayList.get(position);
         Glide.with(context).load(gioHang.getLinkAnh()).into(holder.img);
         holder.tenSP.setText(gioHang.getTenSP());
@@ -341,8 +342,6 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
         ImageView img;
         CardView cardView;
 
-
-
         public GioHangView(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.img);
@@ -354,8 +353,6 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
             soluong=itemView.findViewById(R.id.soluong);
             cong=itemView.findViewById(R.id.cong);
             tru=itemView.findViewById(R.id.tru);
-
-
 
         }
 

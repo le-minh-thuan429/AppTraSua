@@ -16,6 +16,10 @@ public class Comon {
     public static ArrayList<Tooping> toopingArrayList=new ArrayList<>();
     public static int id;
 
+    public static int idQuangTri;
+
+    public static float QuangDuong;
+
 
     public static Boolean DinhDangTimkiem(String timkiem){
         return !TextUtils.isEmpty(timkiem);

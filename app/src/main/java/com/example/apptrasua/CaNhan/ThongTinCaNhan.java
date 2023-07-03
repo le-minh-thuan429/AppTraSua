@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
     Button Luu;
     SQLiteDatabase database;
     String makh;
+    LinearLayout ViTriHienTai;
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +132,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
         email=findViewById(R.id.email);
         diachi=findViewById(R.id.diachi);
         image_bia=findViewById(R.id.image_bia);
+        ViTriHienTai=findViewById(R.id.ViTriHienTai);
     }
     public void oppen(){
         database = DatabaseHandler.initDatabase(this, DATABASE_NAME);

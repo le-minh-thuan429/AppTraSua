@@ -30,4 +30,20 @@ public class LoaiSP implements Serializable {
     public String getLinkAnh() {
         return LinkAnh;
     }
+
+    public void setMaLoai(String maLoai) {
+        MaLoai = maLoai;
+    }
+
+    public void setTenLoai(String tenLoai) {
+        TenLoai = tenLoai;
+    }
+
+    public void setGhiChu(String ghiChu) {
+        GhiChu = ghiChu;
+    }
+
+    public void setLinkAnh(String linkAnh) {
+        LinkAnh = linkAnh;
+    }
 }

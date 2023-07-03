@@ -1,5 +1,6 @@
 package com.example.apptrasua.Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -49,7 +50,7 @@ public class AdapterDonHang extends RecyclerView.Adapter<AdapterDonHang.DonHangV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DonHangView holder, int position) {
+    public void onBindViewHolder(@NonNull DonHangView holder, @SuppressLint("RecyclerView") int position) {
 
         final DonHang donHang=this.arrayList.get(position);
         holder.MaHD.setText(donHang.getMaDH());
@@ -162,7 +163,7 @@ public class AdapterDonHang extends RecyclerView.Adapter<AdapterDonHang.DonHangV
         HoTen.setText(donHang.getHoTen());
         PTTT.setText(donHang.getPTThanhToan());
         Diachi.setText(donHang.getDiaChi());
-        TienHang.setText(Comon.formatMoney(donHang.getTienHang())+" VND");
+        TienHang.setText(Comon.formatMoney(donHang.getThanhTien())+" VND");
 
         Ok.setOnClickListener(new View.OnClickListener() {
             @Override

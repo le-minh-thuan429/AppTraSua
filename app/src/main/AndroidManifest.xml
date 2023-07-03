@@ -5,6 +5,21 @@
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <permission
+        android:name="com.example.apptrasua.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="com.example.apptrasua.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permissions.READ_GSSERVICES" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +28,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTraSua">
-        <activity android:name=".TrangChu.ChiTietSPCuThe"></activity>
+        <activity
+            android:name="Admin.ThongTinUseQT"
+            android:exported="false" />
+        <activity
+            android:name="Admin.DonHangQT"
+            android:exported="false" />
+        <activity
+            android:name="Admin.SuaSanPham"
+            android:exported="false" />
+        <activity
+            android:name="Admin.ChonDanhMuc"
+            android:exported="false" />
+        <activity
+            android:name="Admin.ThemSanPham"
+            android:exported="false" />
+        <activity
+            android:name="Admin.SuaDanhMuc"
+            android:exported="false" />
+        <activity
+            android:name="Admin.ThemDanhM"
+            android:exported="false" />
+        <activity
+            android:name="Admin.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhanHeNguoiDung"
+            android:exported="false" />
+        <activity
+            android:name="Admin.DangNhap"
+            android:exported="false" />
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC4yVtb0c1pzT7CaJikLe96ZjjezTJTAUM" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:exported="true"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".CaNhan.DiaChiMaps"
+            android:exported="false" />
+        <activity android:name=".TrangChu.ChiTietSPCuThe" />
         <activity android:name=".CaNhan.GioiThieu" />
         <activity android:name=".CaNhan.TrangThaiDonHang" />
         <activity android:name=".GioHang.HoanThanh" />
@@ -30,7 +91,9 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".CaNhan.ThongTinCaNhan" />
         <activity android:name=".DangNhap_DangKy" />
-        <activity android:name=".Start">
+        <activity
+            android:name=".Start"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

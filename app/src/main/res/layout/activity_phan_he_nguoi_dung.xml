@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F38CA2"
+    tools:context=".PhanHeNguoiDung">
+
+    <ImageView
+        android:id="@+id/anhmodau"
+        android:layout_width="300dp"
+        android:layout_height="218dp"
+        android:layout_gravity="center"
+        android:background="@drawable/anh3" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="40dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/NguoiDung"
+            style="@style/Button5"
+            android:layout_width="287dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#FB1717"
+            android:elevation="15dp"
+            android:text="Người mua hàng"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/QuanTri"
+            style="@style/Button5"
+            android:layout_width="287dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#FB1717"
+            android:elevation="15dp"
+            android:text="Người quản trị"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+
+
+</FrameLayout>

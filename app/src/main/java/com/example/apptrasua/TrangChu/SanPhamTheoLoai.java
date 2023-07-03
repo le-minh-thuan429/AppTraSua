@@ -107,8 +107,8 @@ public class SanPhamTheoLoai extends AppCompatActivity {
             close();
         }catch (Exception e){
             AlertDialog.Builder al = new AlertDialog.Builder(SanPhamTheoLoai.this);
-            al.setTitle("Database Demo");
-            al.setMessage("Dữ liệu lỗi");
+            al.setTitle("Thông báo");
+            al.setMessage("Không có sản phẩm nào");
             al.create().show();
         }
         return List;
