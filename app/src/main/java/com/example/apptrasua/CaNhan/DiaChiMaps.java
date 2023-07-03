@@ -109,7 +109,7 @@ public class DiaChiMaps extends AppCompatActivity implements OnMapReadyCallback 
               //  OnMapReady(newText);
                 return false;
             }
-        });
+        });//
         quaylai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
